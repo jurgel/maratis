@@ -1,0 +1,89 @@
+<Maratis>
+
+<Mesh>
+
+<Animation>
+	<MaterialAnim file="MultiTexture.mma" />
+	<TextureAnim file="MultiTexture.mta" />
+	<Anims num="1">
+		<anim id="0" name="" start="0" end="60" />
+	</Anims>
+</Animation>
+
+<Textures num="2">
+	<Texture id="0">
+		<image filename="..\maps\BRICKS.png"/>
+		<mapMode value="1"/>
+		<tile u="repeat" v="repeat"/>
+		<translate x="-0.000000" y="0.000000"/>
+		<scale x="4.000000" y="4.000000"/>
+		<rotate angle="0.000000"/>
+	</Texture>
+	<Texture id="1">
+		<image filename="..\maps\FIRE.png"/>
+		<mapMode value="1"/>
+		<tile u="clamp" v="clamp"/>
+		<translate x="-0.000000" y="0.000000"/>
+		<scale x="1.400000" y="1.500000"/>
+		<rotate angle="49.515408"/>
+	</Texture>
+</Textures>
+
+<Materials num="1">
+	<Material id="0" type="2">
+		<blend type="1"/>
+		<disableFog value="0"/>
+		<opacity value="1.000000"/>
+		<shininess value="10.000000"/>
+		<customValue value="0.000000"/>
+		<diffuseColor r="1.000000" g="1.000000" b="1.000000"/>
+		<specularColor r="0.000000" g="0.000000" b="0.000000"/>
+		<emitColor r="0.000000" g="0.000000" b="0.000000"/>
+		<customColor r="0.000000" g="0.000000" b="0.000000"/>
+		<TexturesPass num="2" >
+			<texturePass id="0" texture="0" mode="modulate" mapChannel="0" />
+			<texturePass id="1" texture="1" mode="add" mapChannel="0" />
+		</TexturesPass>
+	</Material>
+</Materials>
+
+<BoundingBox minx="-20.721085" miny="-20.128021" minz="3.509659" maxx="20.128479" maxy="16.441086" maxz="3.509659" />
+
+<SubMeshs num="1">
+	<SubMesh id="0">
+		<BoundingBox minx="-20.721085" miny="-20.128021" minz="3.509659" maxx="20.128479" maxy="16.441086" maxz="3.509659" />
+		<Vertices num="4">
+			<vertex x="-20.721085" y="-20.128021" z="3.509659" />
+			<vertex x="20.128479" y="-20.128021" z="3.509659" />
+			<vertex x="20.128479" y="16.441086" z="3.509659" />
+			<vertex x="-20.721085" y="16.441086" z="3.509659" />
+		</Vertices>
+		<Normals num="4">
+			<normal x="0.000000" y="0.000000" z="1.000000" />
+			<normal x="0.000000" y="0.000000" z="1.000000" />
+			<normal x="0.000000" y="0.000000" z="1.000000" />
+			<normal x="0.000000" y="0.000000" z="1.000000" />
+		</Normals>
+		<TexCoords num="4">
+			<texCoord x="0.000000" y="1.000000" />
+			<texCoord x="1.000000" y="1.000000" />
+			<texCoord x="1.000000" y="0.000000" />
+			<texCoord x="0.000000" y="0.000000" />
+		</TexCoords>
+		<Indices num="6">
+			<index value="0" />
+			<index value="1" />
+			<index value="2" />
+			<index value="2" />
+			<index value="3" />
+			<index value="0" />
+		</Indices>
+		<Displays num="1">
+			<display primType="trirotates" begin="0" size="6" material="0" cullFace="2" />
+		</Displays>
+	</SubMesh>
+</SubMeshs>
+
+</Mesh>
+
+</Maratis>

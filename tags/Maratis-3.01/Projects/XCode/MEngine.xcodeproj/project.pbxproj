@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E918E4221305ABEC0080ED5C /* MCore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E918E4211305ABEC0080ED5C /* MCore.dylib */; };
+		E918E47C1305AC0F0080ED5C /* MMorphingData.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4241305AC0E0080ED5C /* MMorphingData.h */; };
+		E918E47D1305AC0F0080ED5C /* MBox3d.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4251305AC0E0080ED5C /* MBox3d.h */; };
+		E918E47E1305AC0F0080ED5C /* MArmatureAnimRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4261305AC0E0080ED5C /* MArmatureAnimRef.h */; };
+		E918E47F1305AC0F0080ED5C /* MMaterialsAnimRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4271305AC0E0080ED5C /* MMaterialsAnimRef.h */; };
+		E918E4801305AC0F0080ED5C /* MTexturesAnimRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4281305AC0E0080ED5C /* MTexturesAnimRef.h */; };
+		E918E4811305AC0F0080ED5C /* MMaterialsAnim.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4291305AC0E0080ED5C /* MMaterialsAnim.h */; };
+		E918E4821305AC0F0080ED5C /* MKey.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E42A1305AC0E0080ED5C /* MKey.h */; };
+		E918E4831305AC0F0080ED5C /* MTexturesAnim.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E42B1305AC0E0080ED5C /* MTexturesAnim.h */; };
+		E918E4841305AC0F0080ED5C /* MScene.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E42C1305AC0E0080ED5C /* MScene.h */; };
+		E918E4851305AC0F0080ED5C /* MTextureRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E42D1305AC0E0080ED5C /* MTextureRef.h */; };
+		E918E4861305AC0F0080ED5C /* MMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E42E1305AC0E0080ED5C /* MMaterial.h */; };
+		E918E4871305AC0F0080ED5C /* MTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E42F1305AC0E0080ED5C /* MTexture.h */; };
+		E918E4881305AC0F0080ED5C /* MOBone.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4301305AC0E0080ED5C /* MOBone.h */; };
+		E918E4891305AC0F0080ED5C /* MMaterialAnim.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4311305AC0E0080ED5C /* MMaterialAnim.h */; };
+		E918E48A1305AC0F0080ED5C /* MShaderRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4321305AC0E0080ED5C /* MShaderRef.h */; };
+		E918E48B1305AC0F0080ED5C /* MTextureAnim.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4331305AC0E0080ED5C /* MTextureAnim.h */; };
+		E918E48C1305AC0F0080ED5C /* MRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4341305AC0E0080ED5C /* MRenderer.h */; };
+		E918E48D1305AC0F0080ED5C /* MOCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4351305AC0E0080ED5C /* MOCamera.h */; };
+		E918E48E1305AC0F0080ED5C /* MGame.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4361305AC0E0080ED5C /* MGame.h */; };
+		E918E48F1305AC0F0080ED5C /* MMeshTools.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4371305AC0E0080ED5C /* MMeshTools.h */; };
+		E918E4901305AC0F0080ED5C /* MBehaviorCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4381305AC0E0080ED5C /* MBehaviorCreator.h */; };
+		E918E4911305AC0F0080ED5C /* MArmature.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4391305AC0E0080ED5C /* MArmature.h */; };
+		E918E4921305AC0F0080ED5C /* MVariable.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E43A1305AC0E0080ED5C /* MVariable.h */; };
+		E918E4931305AC0F0080ED5C /* MSoundRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E43B1305AC0E0080ED5C /* MSoundRef.h */; };
+		E918E4941305AC0F0080ED5C /* MArmatureAnim.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E43C1305AC0E0080ED5C /* MArmatureAnim.h */; };
+		E918E4951305AC0F0080ED5C /* MRendererCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E43D1305AC0E0080ED5C /* MRendererCreator.h */; };
+		E918E4961305AC0F0080ED5C /* MOLight.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E43E1305AC0E0080ED5C /* MOLight.h */; };
+		E918E4971305AC0F0080ED5C /* MMeshRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E43F1305AC0F0080ED5C /* MMeshRef.h */; };
+		E918E4981305AC0F0080ED5C /* MBehaviorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4401305AC0F0080ED5C /* MBehaviorManager.h */; };
+		E918E4991305AC0F0080ED5C /* MOEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4411305AC0F0080ED5C /* MOEntity.h */; };
+		E918E49A1305AC0F0080ED5C /* MMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4421305AC0F0080ED5C /* MMesh.h */; };
+		E918E49B1305AC0F0080ED5C /* MObject3d.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4431305AC0F0080ED5C /* MObject3d.h */; };
+		E918E49C1305AC0F0080ED5C /* MSkinData.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4441305AC0F0080ED5C /* MSkinData.h */; };
+		E918E49D1305AC0F0080ED5C /* MBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4451305AC0F0080ED5C /* MBehavior.h */; };
+		E918E49E1305AC0F0080ED5C /* MRendererManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4461305AC0F0080ED5C /* MRendererManager.h */; };
+		E918E49F1305AC0F0080ED5C /* MObject3dAnim.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4471305AC0F0080ED5C /* MObject3dAnim.h */; };
+		E918E4A01305AC0F0080ED5C /* MOText.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4481305AC0F0080ED5C /* MOText.h */; };
+		E918E4A11305AC0F0080ED5C /* MFontRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E4491305AC0F0080ED5C /* MFontRef.h */; };
+		E918E4A21305AC0F0080ED5C /* MEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E44A1305AC0F0080ED5C /* MEngine.h */; };
+		E918E4A31305AC0F0080ED5C /* MFrustum.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E44B1305AC0F0080ED5C /* MFrustum.h */; };
+		E918E4A41305AC0F0080ED5C /* MFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E44C1305AC0F0080ED5C /* MFont.h */; };
+		E918E4A51305AC0F0080ED5C /* MOSound.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E44D1305AC0F0080ED5C /* MOSound.h */; };
+		E918E4A61305AC0F0080ED5C /* MLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E44E1305AC0F0080ED5C /* MLevel.h */; };
+		E918E4A71305AC0F0080ED5C /* MFXManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E918E44F1305AC0F0080ED5C /* MFXManager.h */; };
+		E918E4A81305AC0F0080ED5C /* MArmatureAnim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4511305AC0F0080ED5C /* MArmatureAnim.cpp */; };
+		E918E4A91305AC0F0080ED5C /* MSoundRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4521305AC0F0080ED5C /* MSoundRef.cpp */; };
+		E918E4AA1305AC0F0080ED5C /* MVariable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4531305AC0F0080ED5C /* MVariable.cpp */; };
+		E918E4AB1305AC0F0080ED5C /* MOLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4541305AC0F0080ED5C /* MOLight.cpp */; };
+		E918E4AC1305AC0F0080ED5C /* MRendererCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4551305AC0F0080ED5C /* MRendererCreator.cpp */; };
+		E918E4AD1305AC0F0080ED5C /* MMeshRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4561305AC0F0080ED5C /* MMeshRef.cpp */; };
+		E918E4AE1305AC0F0080ED5C /* MBehaviorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4571305AC0F0080ED5C /* MBehaviorManager.cpp */; };
+		E918E4AF1305AC0F0080ED5C /* MOEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4581305AC0F0080ED5C /* MOEntity.cpp */; };
+		E918E4B01305AC0F0080ED5C /* MMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4591305AC0F0080ED5C /* MMesh.cpp */; };
+		E918E4B11305AC0F0080ED5C /* MObject3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E45A1305AC0F0080ED5C /* MObject3d.cpp */; };
+		E918E4B21305AC0F0080ED5C /* MSkinData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E45B1305AC0F0080ED5C /* MSkinData.cpp */; };
+		E918E4B31305AC0F0080ED5C /* MBehavior.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E45C1305AC0F0080ED5C /* MBehavior.cpp */; };
+		E918E4B41305AC0F0080ED5C /* MRendererManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E45D1305AC0F0080ED5C /* MRendererManager.cpp */; };
+		E918E4B51305AC0F0080ED5C /* MObject3dAnim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E45E1305AC0F0080ED5C /* MObject3dAnim.cpp */; };
+		E918E4B61305AC0F0080ED5C /* MOText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E45F1305AC0F0080ED5C /* MOText.cpp */; };
+		E918E4B71305AC0F0080ED5C /* MFontRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4601305AC0F0080ED5C /* MFontRef.cpp */; };
+		E918E4B81305AC0F0080ED5C /* MFrustum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4611305AC0F0080ED5C /* MFrustum.cpp */; };
+		E918E4B91305AC0F0080ED5C /* MEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4621305AC0F0080ED5C /* MEngine.cpp */; };
+		E918E4BA1305AC0F0080ED5C /* MFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4631305AC0F0080ED5C /* MFont.cpp */; };
+		E918E4BB1305AC0F0080ED5C /* MLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4641305AC0F0080ED5C /* MLevel.cpp */; };
+		E918E4BC1305AC0F0080ED5C /* MOSound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4651305AC0F0080ED5C /* MOSound.cpp */; };
+		E918E4BD1305AC0F0080ED5C /* MFXManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4661305AC0F0080ED5C /* MFXManager.cpp */; };
+		E918E4BE1305AC0F0080ED5C /* MMorphingData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4671305AC0F0080ED5C /* MMorphingData.cpp */; };
+		E918E4BF1305AC0F0080ED5C /* MBox3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4681305AC0F0080ED5C /* MBox3d.cpp */; };
+		E918E4C01305AC0F0080ED5C /* MArmatureAnimRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4691305AC0F0080ED5C /* MArmatureAnimRef.cpp */; };
+		E918E4C11305AC0F0080ED5C /* MMaterialsAnimRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E46A1305AC0F0080ED5C /* MMaterialsAnimRef.cpp */; };
+		E918E4C21305AC0F0080ED5C /* MTexturesAnimRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E46B1305AC0F0080ED5C /* MTexturesAnimRef.cpp */; };
+		E918E4C31305AC0F0080ED5C /* MMaterialsAnim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E46C1305AC0F0080ED5C /* MMaterialsAnim.cpp */; };
+		E918E4C41305AC0F0080ED5C /* MTexturesAnim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E46D1305AC0F0080ED5C /* MTexturesAnim.cpp */; };
+		E918E4C51305AC0F0080ED5C /* MKey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E46E1305AC0F0080ED5C /* MKey.cpp */; };
+		E918E4C61305AC0F0080ED5C /* MTextureRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E46F1305AC0F0080ED5C /* MTextureRef.cpp */; };
+		E918E4C71305AC0F0080ED5C /* MScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4701305AC0F0080ED5C /* MScene.cpp */; };
+		E918E4C81305AC0F0080ED5C /* MMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4711305AC0F0080ED5C /* MMaterial.cpp */; };
+		E918E4C91305AC0F0080ED5C /* MOBone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4721305AC0F0080ED5C /* MOBone.cpp */; };
+		E918E4CA1305AC0F0080ED5C /* MMaterialAnim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4731305AC0F0080ED5C /* MMaterialAnim.cpp */; };
+		E918E4CB1305AC0F0080ED5C /* MShaderRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4741305AC0F0080ED5C /* MShaderRef.cpp */; };
+		E918E4CC1305AC0F0080ED5C /* MTextureAnim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4751305AC0F0080ED5C /* MTextureAnim.cpp */; };
+		E918E4CD1305AC0F0080ED5C /* MRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4761305AC0F0080ED5C /* MRenderer.cpp */; };
+		E918E4CE1305AC0F0080ED5C /* MOCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4771305AC0F0080ED5C /* MOCamera.cpp */; };
+		E918E4CF1305AC0F0080ED5C /* MGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4781305AC0F0080ED5C /* MGame.cpp */; };
+		E918E4D01305AC0F0080ED5C /* MMeshTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E4791305AC0F0080ED5C /* MMeshTools.cpp */; };
+		E918E4D11305AC0F0080ED5C /* MBehaviorCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E47A1305AC0F0080ED5C /* MBehaviorCreator.cpp */; };
+		E918E4D21305AC0F0080ED5C /* MArmature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E918E47B1305AC0F0080ED5C /* MArmature.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D2AAC09D05546B4700DB518D /* MEngine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = MEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		E918E4211305ABEC0080ED5C /* MCore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = MCore.dylib; path = build/Release/MCore.dylib; sourceTree = SOURCE_ROOT; };
+		E918E4241305AC0E0080ED5C /* MMorphingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMorphingData.h; path = ../../MSDK/MEngine/Includes/MMorphingData.h; sourceTree = SOURCE_ROOT; };
+		E918E4251305AC0E0080ED5C /* MBox3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBox3d.h; path = ../../MSDK/MEngine/Includes/MBox3d.h; sourceTree = SOURCE_ROOT; };
+		E918E4261305AC0E0080ED5C /* MArmatureAnimRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MArmatureAnimRef.h; path = ../../MSDK/MEngine/Includes/MArmatureAnimRef.h; sourceTree = SOURCE_ROOT; };
+		E918E4271305AC0E0080ED5C /* MMaterialsAnimRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterialsAnimRef.h; path = ../../MSDK/MEngine/Includes/MMaterialsAnimRef.h; sourceTree = SOURCE_ROOT; };
+		E918E4281305AC0E0080ED5C /* MTexturesAnimRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTexturesAnimRef.h; path = ../../MSDK/MEngine/Includes/MTexturesAnimRef.h; sourceTree = SOURCE_ROOT; };
+		E918E4291305AC0E0080ED5C /* MMaterialsAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterialsAnim.h; path = ../../MSDK/MEngine/Includes/MMaterialsAnim.h; sourceTree = SOURCE_ROOT; };
+		E918E42A1305AC0E0080ED5C /* MKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKey.h; path = ../../MSDK/MEngine/Includes/MKey.h; sourceTree = SOURCE_ROOT; };
+		E918E42B1305AC0E0080ED5C /* MTexturesAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTexturesAnim.h; path = ../../MSDK/MEngine/Includes/MTexturesAnim.h; sourceTree = SOURCE_ROOT; };
+		E918E42C1305AC0E0080ED5C /* MScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MScene.h; path = ../../MSDK/MEngine/Includes/MScene.h; sourceTree = SOURCE_ROOT; };
+		E918E42D1305AC0E0080ED5C /* MTextureRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTextureRef.h; path = ../../MSDK/MEngine/Includes/MTextureRef.h; sourceTree = SOURCE_ROOT; };
+		E918E42E1305AC0E0080ED5C /* MMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterial.h; path = ../../MSDK/MEngine/Includes/MMaterial.h; sourceTree = SOURCE_ROOT; };
+		E918E42F1305AC0E0080ED5C /* MTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTexture.h; path = ../../MSDK/MEngine/Includes/MTexture.h; sourceTree = SOURCE_ROOT; };
+		E918E4301305AC0E0080ED5C /* MOBone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBone.h; path = ../../MSDK/MEngine/Includes/MOBone.h; sourceTree = SOURCE_ROOT; };
+		E918E4311305AC0E0080ED5C /* MMaterialAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterialAnim.h; path = ../../MSDK/MEngine/Includes/MMaterialAnim.h; sourceTree = SOURCE_ROOT; };
+		E918E4321305AC0E0080ED5C /* MShaderRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MShaderRef.h; path = ../../MSDK/MEngine/Includes/MShaderRef.h; sourceTree = SOURCE_ROOT; };
+		E918E4331305AC0E0080ED5C /* MTextureAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTextureAnim.h; path = ../../MSDK/MEngine/Includes/MTextureAnim.h; sourceTree = SOURCE_ROOT; };
+		E918E4341305AC0E0080ED5C /* MRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRenderer.h; path = ../../MSDK/MEngine/Includes/MRenderer.h; sourceTree = SOURCE_ROOT; };
+		E918E4351305AC0E0080ED5C /* MOCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOCamera.h; path = ../../MSDK/MEngine/Includes/MOCamera.h; sourceTree = SOURCE_ROOT; };
+		E918E4361305AC0E0080ED5C /* MGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGame.h; path = ../../MSDK/MEngine/Includes/MGame.h; sourceTree = SOURCE_ROOT; };
+		E918E4371305AC0E0080ED5C /* MMeshTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeshTools.h; path = ../../MSDK/MEngine/Includes/MMeshTools.h; sourceTree = SOURCE_ROOT; };
+		E918E4381305AC0E0080ED5C /* MBehaviorCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBehaviorCreator.h; path = ../../MSDK/MEngine/Includes/MBehaviorCreator.h; sourceTree = SOURCE_ROOT; };
+		E918E4391305AC0E0080ED5C /* MArmature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MArmature.h; path = ../../MSDK/MEngine/Includes/MArmature.h; sourceTree = SOURCE_ROOT; };
+		E918E43A1305AC0E0080ED5C /* MVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MVariable.h; path = ../../MSDK/MEngine/Includes/MVariable.h; sourceTree = SOURCE_ROOT; };
+		E918E43B1305AC0E0080ED5C /* MSoundRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSoundRef.h; path = ../../MSDK/MEngine/Includes/MSoundRef.h; sourceTree = SOURCE_ROOT; };
+		E918E43C1305AC0E0080ED5C /* MArmatureAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MArmatureAnim.h; path = ../../MSDK/MEngine/Includes/MArmatureAnim.h; sourceTree = SOURCE_ROOT; };
+		E918E43D1305AC0E0080ED5C /* MRendererCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRendererCreator.h; path = ../../MSDK/MEngine/Includes/MRendererCreator.h; sourceTree = SOURCE_ROOT; };
+		E918E43E1305AC0E0080ED5C /* MOLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOLight.h; path = ../../MSDK/MEngine/Includes/MOLight.h; sourceTree = SOURCE_ROOT; };
+		E918E43F1305AC0F0080ED5C /* MMeshRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeshRef.h; path = ../../MSDK/MEngine/Includes/MMeshRef.h; sourceTree = SOURCE_ROOT; };
+		E918E4401305AC0F0080ED5C /* MBehaviorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBehaviorManager.h; path = ../../MSDK/MEngine/Includes/MBehaviorManager.h; sourceTree = SOURCE_ROOT; };
+		E918E4411305AC0F0080ED5C /* MOEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOEntity.h; path = ../../MSDK/MEngine/Includes/MOEntity.h; sourceTree = SOURCE_ROOT; };
+		E918E4421305AC0F0080ED5C /* MMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMesh.h; path = ../../MSDK/MEngine/Includes/MMesh.h; sourceTree = SOURCE_ROOT; };
+		E918E4431305AC0F0080ED5C /* MObject3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MObject3d.h; path = ../../MSDK/MEngine/Includes/MObject3d.h; sourceTree = SOURCE_ROOT; };
+		E918E4441305AC0F0080ED5C /* MSkinData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSkinData.h; path = ../../MSDK/MEngine/Includes/MSkinData.h; sourceTree = SOURCE_ROOT; };
+		E918E4451305AC0F0080ED5C /* MBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBehavior.h; path = ../../MSDK/MEngine/Includes/MBehavior.h; sourceTree = SOURCE_ROOT; };
+		E918E4461305AC0F0080ED5C /* MRendererManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRendererManager.h; path = ../../MSDK/MEngine/Includes/MRendererManager.h; sourceTree = SOURCE_ROOT; };
+		E918E4471305AC0F0080ED5C /* MObject3dAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MObject3dAnim.h; path = ../../MSDK/MEngine/Includes/MObject3dAnim.h; sourceTree = SOURCE_ROOT; };
+		E918E4481305AC0F0080ED5C /* MOText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOText.h; path = ../../MSDK/MEngine/Includes/MOText.h; sourceTree = SOURCE_ROOT; };
+		E918E4491305AC0F0080ED5C /* MFontRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFontRef.h; path = ../../MSDK/MEngine/Includes/MFontRef.h; sourceTree = SOURCE_ROOT; };
+		E918E44A1305AC0F0080ED5C /* MEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MEngine.h; path = ../../MSDK/MEngine/Includes/MEngine.h; sourceTree = SOURCE_ROOT; };
+		E918E44B1305AC0F0080ED5C /* MFrustum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFrustum.h; path = ../../MSDK/MEngine/Includes/MFrustum.h; sourceTree = SOURCE_ROOT; };
+		E918E44C1305AC0F0080ED5C /* MFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFont.h; path = ../../MSDK/MEngine/Includes/MFont.h; sourceTree = SOURCE_ROOT; };
+		E918E44D1305AC0F0080ED5C /* MOSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSound.h; path = ../../MSDK/MEngine/Includes/MOSound.h; sourceTree = SOURCE_ROOT; };
+		E918E44E1305AC0F0080ED5C /* MLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLevel.h; path = ../../MSDK/MEngine/Includes/MLevel.h; sourceTree = SOURCE_ROOT; };
+		E918E44F1305AC0F0080ED5C /* MFXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFXManager.h; path = ../../MSDK/MEngine/Includes/MFXManager.h; sourceTree = SOURCE_ROOT; };
+		E918E4511305AC0F0080ED5C /* MArmatureAnim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MArmatureAnim.cpp; path = ../../MSDK/MEngine/Sources/MArmatureAnim.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4521305AC0F0080ED5C /* MSoundRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MSoundRef.cpp; path = ../../MSDK/MEngine/Sources/MSoundRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4531305AC0F0080ED5C /* MVariable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MVariable.cpp; path = ../../MSDK/MEngine/Sources/MVariable.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4541305AC0F0080ED5C /* MOLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOLight.cpp; path = ../../MSDK/MEngine/Sources/MOLight.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4551305AC0F0080ED5C /* MRendererCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MRendererCreator.cpp; path = ../../MSDK/MEngine/Sources/MRendererCreator.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4561305AC0F0080ED5C /* MMeshRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMeshRef.cpp; path = ../../MSDK/MEngine/Sources/MMeshRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4571305AC0F0080ED5C /* MBehaviorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBehaviorManager.cpp; path = ../../MSDK/MEngine/Sources/MBehaviorManager.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4581305AC0F0080ED5C /* MOEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOEntity.cpp; path = ../../MSDK/MEngine/Sources/MOEntity.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4591305AC0F0080ED5C /* MMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMesh.cpp; path = ../../MSDK/MEngine/Sources/MMesh.cpp; sourceTree = SOURCE_ROOT; };
+		E918E45A1305AC0F0080ED5C /* MObject3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MObject3d.cpp; path = ../../MSDK/MEngine/Sources/MObject3d.cpp; sourceTree = SOURCE_ROOT; };
+		E918E45B1305AC0F0080ED5C /* MSkinData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MSkinData.cpp; path = ../../MSDK/MEngine/Sources/MSkinData.cpp; sourceTree = SOURCE_ROOT; };
+		E918E45C1305AC0F0080ED5C /* MBehavior.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBehavior.cpp; path = ../../MSDK/MEngine/Sources/MBehavior.cpp; sourceTree = SOURCE_ROOT; };
+		E918E45D1305AC0F0080ED5C /* MRendererManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MRendererManager.cpp; path = ../../MSDK/MEngine/Sources/MRendererManager.cpp; sourceTree = SOURCE_ROOT; };
+		E918E45E1305AC0F0080ED5C /* MObject3dAnim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MObject3dAnim.cpp; path = ../../MSDK/MEngine/Sources/MObject3dAnim.cpp; sourceTree = SOURCE_ROOT; };
+		E918E45F1305AC0F0080ED5C /* MOText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOText.cpp; path = ../../MSDK/MEngine/Sources/MOText.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4601305AC0F0080ED5C /* MFontRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MFontRef.cpp; path = ../../MSDK/MEngine/Sources/MFontRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4611305AC0F0080ED5C /* MFrustum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MFrustum.cpp; path = ../../MSDK/MEngine/Sources/MFrustum.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4621305AC0F0080ED5C /* MEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MEngine.cpp; path = ../../MSDK/MEngine/Sources/MEngine.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4631305AC0F0080ED5C /* MFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MFont.cpp; path = ../../MSDK/MEngine/Sources/MFont.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4641305AC0F0080ED5C /* MLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MLevel.cpp; path = ../../MSDK/MEngine/Sources/MLevel.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4651305AC0F0080ED5C /* MOSound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOSound.cpp; path = ../../MSDK/MEngine/Sources/MOSound.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4661305AC0F0080ED5C /* MFXManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MFXManager.cpp; path = ../../MSDK/MEngine/Sources/MFXManager.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4671305AC0F0080ED5C /* MMorphingData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMorphingData.cpp; path = ../../MSDK/MEngine/Sources/MMorphingData.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4681305AC0F0080ED5C /* MBox3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBox3d.cpp; path = ../../MSDK/MEngine/Sources/MBox3d.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4691305AC0F0080ED5C /* MArmatureAnimRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MArmatureAnimRef.cpp; path = ../../MSDK/MEngine/Sources/MArmatureAnimRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E46A1305AC0F0080ED5C /* MMaterialsAnimRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMaterialsAnimRef.cpp; path = ../../MSDK/MEngine/Sources/MMaterialsAnimRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E46B1305AC0F0080ED5C /* MTexturesAnimRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MTexturesAnimRef.cpp; path = ../../MSDK/MEngine/Sources/MTexturesAnimRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E46C1305AC0F0080ED5C /* MMaterialsAnim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMaterialsAnim.cpp; path = ../../MSDK/MEngine/Sources/MMaterialsAnim.cpp; sourceTree = SOURCE_ROOT; };
+		E918E46D1305AC0F0080ED5C /* MTexturesAnim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MTexturesAnim.cpp; path = ../../MSDK/MEngine/Sources/MTexturesAnim.cpp; sourceTree = SOURCE_ROOT; };
+		E918E46E1305AC0F0080ED5C /* MKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MKey.cpp; path = ../../MSDK/MEngine/Sources/MKey.cpp; sourceTree = SOURCE_ROOT; };
+		E918E46F1305AC0F0080ED5C /* MTextureRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MTextureRef.cpp; path = ../../MSDK/MEngine/Sources/MTextureRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4701305AC0F0080ED5C /* MScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MScene.cpp; path = ../../MSDK/MEngine/Sources/MScene.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4711305AC0F0080ED5C /* MMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMaterial.cpp; path = ../../MSDK/MEngine/Sources/MMaterial.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4721305AC0F0080ED5C /* MOBone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOBone.cpp; path = ../../MSDK/MEngine/Sources/MOBone.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4731305AC0F0080ED5C /* MMaterialAnim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMaterialAnim.cpp; path = ../../MSDK/MEngine/Sources/MMaterialAnim.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4741305AC0F0080ED5C /* MShaderRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MShaderRef.cpp; path = ../../MSDK/MEngine/Sources/MShaderRef.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4751305AC0F0080ED5C /* MTextureAnim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MTextureAnim.cpp; path = ../../MSDK/MEngine/Sources/MTextureAnim.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4761305AC0F0080ED5C /* MRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MRenderer.cpp; path = ../../MSDK/MEngine/Sources/MRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4771305AC0F0080ED5C /* MOCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOCamera.cpp; path = ../../MSDK/MEngine/Sources/MOCamera.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4781305AC0F0080ED5C /* MGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MGame.cpp; path = ../../MSDK/MEngine/Sources/MGame.cpp; sourceTree = SOURCE_ROOT; };
+		E918E4791305AC0F0080ED5C /* MMeshTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MMeshTools.cpp; path = ../../MSDK/MEngine/Sources/MMeshTools.cpp; sourceTree = SOURCE_ROOT; };
+		E918E47A1305AC0F0080ED5C /* MBehaviorCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBehaviorCreator.cpp; path = ../../MSDK/MEngine/Sources/MBehaviorCreator.cpp; sourceTree = SOURCE_ROOT; };
+		E918E47B1305AC0F0080ED5C /* MArmature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MArmature.cpp; path = ../../MSDK/MEngine/Sources/MArmature.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC09B05546B4700DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E918E4221305ABEC0080ED5C /* MCore.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC09D05546B4700DB518D /* MEngine.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* MEngine */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77ACFE841707C02AAC07 /* Source */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+			);
+			name = MEngine;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				E918E4211305ABEC0080ED5C /* MCore.dylib */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E918E4231305AC0E0080ED5C /* Includes */,
+				E918E4501305AC0F0080ED5C /* Sources */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		E918E4231305AC0E0080ED5C /* Includes */ = {
+			isa = PBXGroup;
+			children = (
+				E918E4241305AC0E0080ED5C /* MMorphingData.h */,
+				E918E4251305AC0E0080ED5C /* MBox3d.h */,
+				E918E4261305AC0E0080ED5C /* MArmatureAnimRef.h */,
+				E918E4271305AC0E0080ED5C /* MMaterialsAnimRef.h */,
+				E918E4281305AC0E0080ED5C /* MTexturesAnimRef.h */,
+				E918E4291305AC0E0080ED5C /* MMaterialsAnim.h */,
+				E918E42A1305AC0E0080ED5C /* MKey.h */,
+				E918E42B1305AC0E0080ED5C /* MTexturesAnim.h */,
+				E918E42C1305AC0E0080ED5C /* MScene.h */,
+				E918E42D1305AC0E0080ED5C /* MTextureRef.h */,
+				E918E42E1305AC0E0080ED5C /* MMaterial.h */,
+				E918E42F1305AC0E0080ED5C /* MTexture.h */,
+				E918E4301305AC0E0080ED5C /* MOBone.h */,
+				E918E4311305AC0E0080ED5C /* MMaterialAnim.h */,
+				E918E4321305AC0E0080ED5C /* MShaderRef.h */,
+				E918E4331305AC0E0080ED5C /* MTextureAnim.h */,
+				E918E4341305AC0E0080ED5C /* MRenderer.h */,
+				E918E4351305AC0E0080ED5C /* MOCamera.h */,
+				E918E4361305AC0E0080ED5C /* MGame.h */,
+				E918E4371305AC0E0080ED5C /* MMeshTools.h */,
+				E918E4381305AC0E0080ED5C /* MBehaviorCreator.h */,
+				E918E4391305AC0E0080ED5C /* MArmature.h */,
+				E918E43A1305AC0E0080ED5C /* MVariable.h */,
+				E918E43B1305AC0E0080ED5C /* MSoundRef.h */,
+				E918E43C1305AC0E0080ED5C /* MArmatureAnim.h */,
+				E918E43D1305AC0E0080ED5C /* MRendererCreator.h */,
+				E918E43E1305AC0E0080ED5C /* MOLight.h */,
+				E918E43F1305AC0F0080ED5C /* MMeshRef.h */,
+				E918E4401305AC0F0080ED5C /* MBehaviorManager.h */,
+				E918E4411305AC0F0080ED5C /* MOEntity.h */,
+				E918E4421305AC0F0080ED5C /* MMesh.h */,
+				E918E4431305AC0F0080ED5C /* MObject3d.h */,
+				E918E4441305AC0F0080ED5C /* MSkinData.h */,
+				E918E4451305AC0F0080ED5C /* MBehavior.h */,
+				E918E4461305AC0F0080ED5C /* MRendererManager.h */,
+				E918E4471305AC0F0080ED5C /* MObject3dAnim.h */,
+				E918E4481305AC0F0080ED5C /* MOText.h */,
+				E918E4491305AC0F0080ED5C /* MFontRef.h */,
+				E918E44A1305AC0F0080ED5C /* MEngine.h */,
+				E918E44B1305AC0F0080ED5C /* MFrustum.h */,
+				E918E44C1305AC0F0080ED5C /* MFont.h */,
+				E918E44D1305AC0F0080ED5C /* MOSound.h */,
+				E918E44E1305AC0F0080ED5C /* MLevel.h */,
+				E918E44F1305AC0F0080ED5C /* MFXManager.h */,
+			);
+			name = Includes;
+			path = ../../MSDK/MEngine/Includes;
+			sourceTree = SOURCE_ROOT;
+		};
+		E918E4501305AC0F0080ED5C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E918E4511305AC0F0080ED5C /* MArmatureAnim.cpp */,
+				E918E4521305AC0F0080ED5C /* MSoundRef.cpp */,
+				E918E4531305AC0F0080ED5C /* MVariable.cpp */,
+				E918E4541305AC0F0080ED5C /* MOLight.cpp */,
+				E918E4551305AC0F0080ED5C /* MRendererCreator.cpp */,
+				E918E4561305AC0F0080ED5C /* MMeshRef.cpp */,
+				E918E4571305AC0F0080ED5C /* MBehaviorManager.cpp */,
+				E918E4581305AC0F0080ED5C /* MOEntity.cpp */,
+				E918E4591305AC0F0080ED5C /* MMesh.cpp */,
+				E918E45A1305AC0F0080ED5C /* MObject3d.cpp */,
+				E918E45B1305AC0F0080ED5C /* MSkinData.cpp */,
+				E918E45C1305AC0F0080ED5C /* MBehavior.cpp */,
+				E918E45D1305AC0F0080ED5C /* MRendererManager.cpp */,
+				E918E45E1305AC0F0080ED5C /* MObject3dAnim.cpp */,
+				E918E45F1305AC0F0080ED5C /* MOText.cpp */,
+				E918E4601305AC0F0080ED5C /* MFontRef.cpp */,
+				E918E4611305AC0F0080ED5C /* MFrustum.cpp */,
+				E918E4621305AC0F0080ED5C /* MEngine.cpp */,
+				E918E4631305AC0F0080ED5C /* MFont.cpp */,
+				E918E4641305AC0F0080ED5C /* MLevel.cpp */,
+				E918E4651305AC0F0080ED5C /* MOSound.cpp */,
+				E918E4661305AC0F0080ED5C /* MFXManager.cpp */,
+				E918E4671305AC0F0080ED5C /* MMorphingData.cpp */,
+				E918E4681305AC0F0080ED5C /* MBox3d.cpp */,
+				E918E4691305AC0F0080ED5C /* MArmatureAnimRef.cpp */,
+				E918E46A1305AC0F0080ED5C /* MMaterialsAnimRef.cpp */,
+				E918E46B1305AC0F0080ED5C /* MTexturesAnimRef.cpp */,
+				E918E46C1305AC0F0080ED5C /* MMaterialsAnim.cpp */,
+				E918E46D1305AC0F0080ED5C /* MTexturesAnim.cpp */,
+				E918E46E1305AC0F0080ED5C /* MKey.cpp */,
+				E918E46F1305AC0F0080ED5C /* MTextureRef.cpp */,
+				E918E4701305AC0F0080ED5C /* MScene.cpp */,
+				E918E4711305AC0F0080ED5C /* MMaterial.cpp */,
+				E918E4721305AC0F0080ED5C /* MOBone.cpp */,
+				E918E4731305AC0F0080ED5C /* MMaterialAnim.cpp */,
+				E918E4741305AC0F0080ED5C /* MShaderRef.cpp */,
+				E918E4751305AC0F0080ED5C /* MTextureAnim.cpp */,
+				E918E4761305AC0F0080ED5C /* MRenderer.cpp */,
+				E918E4771305AC0F0080ED5C /* MOCamera.cpp */,
+				E918E4781305AC0F0080ED5C /* MGame.cpp */,
+				E918E4791305AC0F0080ED5C /* MMeshTools.cpp */,
+				E918E47A1305AC0F0080ED5C /* MBehaviorCreator.cpp */,
+				E918E47B1305AC0F0080ED5C /* MArmature.cpp */,
+			);
+			name = Sources;
+			path = ../../MSDK/MEngine/Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC09905546B4700DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E918E47C1305AC0F0080ED5C /* MMorphingData.h in Headers */,
+				E918E47D1305AC0F0080ED5C /* MBox3d.h in Headers */,
+				E918E47E1305AC0F0080ED5C /* MArmatureAnimRef.h in Headers */,
+				E918E47F1305AC0F0080ED5C /* MMaterialsAnimRef.h in Headers */,
+				E918E4801305AC0F0080ED5C /* MTexturesAnimRef.h in Headers */,
+				E918E4811305AC0F0080ED5C /* MMaterialsAnim.h in Headers */,
+				E918E4821305AC0F0080ED5C /* MKey.h in Headers */,
+				E918E4831305AC0F0080ED5C /* MTexturesAnim.h in Headers */,
+				E918E4841305AC0F0080ED5C /* MScene.h in Headers */,
+				E918E4851305AC0F0080ED5C /* MTextureRef.h in Headers */,
+				E918E4861305AC0F0080ED5C /* MMaterial.h in Headers */,
+				E918E4871305AC0F0080ED5C /* MTexture.h in Headers */,
+				E918E4881305AC0F0080ED5C /* MOBone.h in Headers */,
+				E918E4891305AC0F0080ED5C /* MMaterialAnim.h in Headers */,
+				E918E48A1305AC0F0080ED5C /* MShaderRef.h in Headers */,
+				E918E48B1305AC0F0080ED5C /* MTextureAnim.h in Headers */,
+				E918E48C1305AC0F0080ED5C /* MRenderer.h in Headers */,
+				E918E48D1305AC0F0080ED5C /* MOCamera.h in Headers */,
+				E918E48E1305AC0F0080ED5C /* MGame.h in Headers */,
+				E918E48F1305AC0F0080ED5C /* MMeshTools.h in Headers */,
+				E918E4901305AC0F0080ED5C /* MBehaviorCreator.h in Headers */,
+				E918E4911305AC0F0080ED5C /* MArmature.h in Headers */,
+				E918E4921305AC0F0080ED5C /* MVariable.h in Headers */,
+				E918E4931305AC0F0080ED5C /* MSoundRef.h in Headers */,
+				E918E4941305AC0F0080ED5C /* MArmatureAnim.h in Headers */,
+				E918E4951305AC0F0080ED5C /* MRendererCreator.h in Headers */,
+				E918E4961305AC0F0080ED5C /* MOLight.h in Headers */,
+				E918E4971305AC0F0080ED5C /* MMeshRef.h in Headers */,
+				E918E4981305AC0F0080ED5C /* MBehaviorManager.h in Headers */,
+				E918E4991305AC0F0080ED5C /* MOEntity.h in Headers */,
+				E918E49A1305AC0F0080ED5C /* MMesh.h in Headers */,
+				E918E49B1305AC0F0080ED5C /* MObject3d.h in Headers */,
+				E918E49C1305AC0F0080ED5C /* MSkinData.h in Headers */,
+				E918E49D1305AC0F0080ED5C /* MBehavior.h in Headers */,
+				E918E49E1305AC0F0080ED5C /* MRendererManager.h in Headers */,
+				E918E49F1305AC0F0080ED5C /* MObject3dAnim.h in Headers */,
+				E918E4A01305AC0F0080ED5C /* MOText.h in Headers */,
+				E918E4A11305AC0F0080ED5C /* MFontRef.h in Headers */,
+				E918E4A21305AC0F0080ED5C /* MEngine.h in Headers */,
+				E918E4A31305AC0F0080ED5C /* MFrustum.h in Headers */,
+				E918E4A41305AC0F0080ED5C /* MFont.h in Headers */,
+				E918E4A51305AC0F0080ED5C /* MOSound.h in Headers */,
+				E918E4A61305AC0F0080ED5C /* MLevel.h in Headers */,
+				E918E4A71305AC0F0080ED5C /* MFXManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC09C05546B4700DB518D /* MEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "MEngine" */;
+			buildPhases = (
+				D2AAC09905546B4700DB518D /* Headers */,
+				D2AAC09B05546B4700DB518D /* Frameworks */,
+				D2AAC09A05546B4700DB518D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MEngine;
+			productName = libMEngine;
+			productReference = D2AAC09D05546B4700DB518D /* MEngine.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB916408733D950010E9CD /* Build configuration list for PBXProject "MEngine" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* MEngine */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC09C05546B4700DB518D /* MEngine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC09A05546B4700DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E918E4A81305AC0F0080ED5C /* MArmatureAnim.cpp in Sources */,
+				E918E4A91305AC0F0080ED5C /* MSoundRef.cpp in Sources */,
+				E918E4AA1305AC0F0080ED5C /* MVariable.cpp in Sources */,
+				E918E4AB1305AC0F0080ED5C /* MOLight.cpp in Sources */,
+				E918E4AC1305AC0F0080ED5C /* MRendererCreator.cpp in Sources */,
+				E918E4AD1305AC0F0080ED5C /* MMeshRef.cpp in Sources */,
+				E918E4AE1305AC0F0080ED5C /* MBehaviorManager.cpp in Sources */,
+				E918E4AF1305AC0F0080ED5C /* MOEntity.cpp in Sources */,
+				E918E4B01305AC0F0080ED5C /* MMesh.cpp in Sources */,
+				E918E4B11305AC0F0080ED5C /* MObject3d.cpp in Sources */,
+				E918E4B21305AC0F0080ED5C /* MSkinData.cpp in Sources */,
+				E918E4B31305AC0F0080ED5C /* MBehavior.cpp in Sources */,
+				E918E4B41305AC0F0080ED5C /* MRendererManager.cpp in Sources */,
+				E918E4B51305AC0F0080ED5C /* MObject3dAnim.cpp in Sources */,
+				E918E4B61305AC0F0080ED5C /* MOText.cpp in Sources */,
+				E918E4B71305AC0F0080ED5C /* MFontRef.cpp in Sources */,
+				E918E4B81305AC0F0080ED5C /* MFrustum.cpp in Sources */,
+				E918E4B91305AC0F0080ED5C /* MEngine.cpp in Sources */,
+				E918E4BA1305AC0F0080ED5C /* MFont.cpp in Sources */,
+				E918E4BB1305AC0F0080ED5C /* MLevel.cpp in Sources */,
+				E918E4BC1305AC0F0080ED5C /* MOSound.cpp in Sources */,
+				E918E4BD1305AC0F0080ED5C /* MFXManager.cpp in Sources */,
+				E918E4BE1305AC0F0080ED5C /* MMorphingData.cpp in Sources */,
+				E918E4BF1305AC0F0080ED5C /* MBox3d.cpp in Sources */,
+				E918E4C01305AC0F0080ED5C /* MArmatureAnimRef.cpp in Sources */,
+				E918E4C11305AC0F0080ED5C /* MMaterialsAnimRef.cpp in Sources */,
+				E918E4C21305AC0F0080ED5C /* MTexturesAnimRef.cpp in Sources */,
+				E918E4C31305AC0F0080ED5C /* MMaterialsAnim.cpp in Sources */,
+				E918E4C41305AC0F0080ED5C /* MTexturesAnim.cpp in Sources */,
+				E918E4C51305AC0F0080ED5C /* MKey.cpp in Sources */,
+				E918E4C61305AC0F0080ED5C /* MTextureRef.cpp in Sources */,
+				E918E4C71305AC0F0080ED5C /* MScene.cpp in Sources */,
+				E918E4C81305AC0F0080ED5C /* MMaterial.cpp in Sources */,
+				E918E4C91305AC0F0080ED5C /* MOBone.cpp in Sources */,
+				E918E4CA1305AC0F0080ED5C /* MMaterialAnim.cpp in Sources */,
+				E918E4CB1305AC0F0080ED5C /* MShaderRef.cpp in Sources */,
+				E918E4CC1305AC0F0080ED5C /* MTextureAnim.cpp in Sources */,
+				E918E4CD1305AC0F0080ED5C /* MRenderer.cpp in Sources */,
+				E918E4CE1305AC0F0080ED5C /* MOCamera.cpp in Sources */,
+				E918E4CF1305AC0F0080ED5C /* MGame.cpp in Sources */,
+				E918E4D01305AC0F0080ED5C /* MMeshTools.cpp in Sources */,
+				E918E4D11305AC0F0080ED5C /* MBehaviorCreator.cpp in Sources */,
+				E918E4D21305AC0F0080ED5C /* MArmature.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB916108733D950010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				INSTALL_PATH = "@rpath";
+				LD_DYLIB_INSTALL_NAME = "@rpath/MEngine.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path @executable @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = build/Debug;
+			};
+			name = Debug;
+		};
+		1DEB916208733D950010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INSTALL_PATH = "@rpath";
+				LD_DYLIB_INSTALL_NAME = "@rpath/MEngine.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = build/Release;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		1DEB916508733D950010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_SYMBOL_SEPARATION = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../MSDK/MCore/Includes;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = build/Debug;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = MEngine;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB916608733D950010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_SYMBOL_SEPARATION = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../MSDK/MCore/Includes;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = build/Release;
+				PREBINDING = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = MEngine;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "MEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB916108733D950010E9CD /* Debug */,
+				1DEB916208733D950010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB916408733D950010E9CD /* Build configuration list for PBXProject "MEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB916508733D950010E9CD /* Debug */,
+				1DEB916608733D950010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

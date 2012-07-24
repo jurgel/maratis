@@ -1,0 +1,271 @@
+<Maratis version="3.0">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<script file="../scripts/Jules.lua" />
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -2.000000" />
+
+		<Light name="Light0">
+			<active value="true" />
+			<transform 
+				position="62.494396 70.196968 38.276016"
+				rotation="0.000000 58.714760 0.000000"
+				scale="1.000000 1.000000 0.980940" />
+			<properties 
+				radius="400.000000"
+				color="1.000000 0.500000 0.400000"
+				intensity="100.000000"
+				spotAngle="60.000000"
+				spotExponent="0.040000"
+				shadow="true"
+				shadowBias="2.000000"
+				shadowBlur="0.0000"
+				shadowQuality="256" />
+		</Light>
+		<Light name="Light2">
+			<active value="true" />
+			<transform 
+				position="10.040330 -151.653717 58.480923"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="200.000000"
+				color="0.600000 1.000000 0.800000"
+				intensity="10.000000"
+				spotAngle="180.000000"
+				spotExponent="0.000000"
+				shadow="false" />
+		</Light>
+		<Light name="Light3">
+			<active value="true" />
+			<transform 
+				position="59.583004 63.363911 34.813667"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="150.000000"
+				color="1.200000 0.600000 0.300000"
+				intensity="10.000000"
+				spotAngle="180.000000"
+				spotExponent="0.000000"
+				shadow="false" />
+		</Light>
+		<Light name="Light4">
+			<active value="true" />
+			<transform 
+				position="-36.680424 63.363911 34.813667"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="150.000000"
+				color="1.200000 0.600000 0.300000"
+				intensity="10.000000"
+				spotAngle="45.000000"
+				spotExponent="0.000000"
+				shadow="false" />
+		</Light>
+		<Light name="Light1">
+			<active value="true" />
+			<transform 
+				position="14.295173 212.198181 54.024422"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 0.980940" />
+			<properties 
+				radius="400.000000"
+				color="1.000000 0.800000 0.600000"
+				intensity="1.000000"
+				spotAngle="180.000000"
+				spotExponent="0.000000"
+				shadow="false" />
+		</Light>
+		<Camera name="Camera0">
+			<active value="true" />
+			<transform 
+				position="10.790487 148.249237 46.475655"
+				rotation="60.455296 0.000171 -179.999893"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="false"
+				fov="60.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000" />
+			<Behavior name="LookAt">
+				<properties 
+					target="Jules" />
+			</Behavior>
+			<Behavior name="Follow">
+				<properties 
+					target="Target"
+					delay="0.000000"
+					offset="0.000000 0.000000 0.000000"
+					local="false" />
+			</Behavior>
+		</Camera>
+		<Entity name="Jules" file="../meshs/Jules.mesh">
+			<BoundingBox min="-4.696570 -4.532283 -0.121014" max="4.693012 4.184887 14.800739" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				parent="Player"
+				position="0.000000 -5.015710 0.000004"
+				rotation="-90.000000 0.000000 0.000000"
+				scale="0.885475 0.885475 0.885476" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Player" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="10.790578 68.289520 6.818446"
+				rotation="90.004173 0.000482 -160.000427"
+				scale="1.129337 1.129337 1.129337" />
+			<properties 
+				invisible="true" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="1.000000"
+				friction="1.000000"
+				restitution="0.100000"
+				linearDamping="0.900000"
+				angularDamping="0.010000"
+				angularFactor="0.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity6" file="../meshs/StoneBox.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="40.478500 82.311310 5.382970"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 0.830000" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="4.000000"
+				friction="1.000000"
+				restitution="0.010000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="0.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Set" file="../meshs/StoneSet.mesh">
+			<BoundingBox min="-106.327309 -279.168091 -0.512484" max="101.104454 108.477768 96.625603" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="11.556992 101.637291 1.172470"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="TriangleMesh"
+				ghost="false"
+				mass="0.000000"
+				friction="0.800000"
+				restitution="0.100000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity0" file="../meshs/Fire.mesh">
+			<BoundingBox min="-3.347644 -0.405077 -4.401196" max="2.906150 0.409914 6.820122" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="59.648289 46.154827 28.497194"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.029289 1.029289 1.029289" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Entity7" file="../meshs/Fire.mesh">
+			<BoundingBox min="-3.347644 -0.405077 -4.401196" max="2.906150 0.409914 6.820122" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="-36.615139 46.154827 28.497194"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.073674 1.073674 1.073674" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Target" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="10.790487 148.249237 46.475655"
+				rotation="0.000000 -0.000000 88.910042"
+				scale="0.600000 0.600000 0.600000" />
+			<properties 
+				invisible="true" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="0.000010"
+				friction="0.010000"
+				restitution="0.010000"
+				linearDamping="0.500000"
+				angularDamping="0.010000"
+				angularFactor="0.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+			<Behavior name="Follow">
+				<properties 
+					target="Jules"
+					delay="15.000000"
+					offset="0.000000 80.000000 60.000000"
+					local="false" />
+			</Behavior>
+		</Entity>
+		<Entity name="Feet" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="10.790578 68.289520 1.318446"
+				rotation="89.999283 -0.001284 -0.388248"
+				scale="0.737267 0.276475 0.737267" />
+			<properties 
+				invisible="true" />
+			<physics 
+				shape="Cylinder"
+				ghost="true"
+				mass="0.100000"
+				friction="0.100000"
+				restitution="0.100000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+			<Behavior name="Follow">
+				<properties 
+					target="Player"
+					delay="0.000000"
+					offset="0.000000 0.000000 -5.500000"
+					local="false" />
+			</Behavior>
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>

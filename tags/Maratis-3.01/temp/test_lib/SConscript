@@ -1,0 +1,22 @@
+# coding: utf-8
+# test lib sconscript
+#
+# $LastChangedDate: $
+# $LastChangedBy: dbacc $
+
+
+import os,sys
+
+Import('env')
+env_local = env.Clone()
+
+#env_local.Append(SHLINKFLAGS = ['-install_name ' + '${TARGET.file}'])
+
+# build libs
+SConscript( 'shlib1/SConscript', exports={'env':env_local} )
+SConscript( 'shlib2/SConscript', exports={'env':env_local} )
+SConscript( 'stlib/SConscript',   exports={'env':env_local} )
+
+# build calling app
+SConscript( 'test_libcall/SConscript', exports={'env':env_local} )
+

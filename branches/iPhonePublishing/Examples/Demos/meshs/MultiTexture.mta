@@ -1,0 +1,16 @@
+<Maratis>
+
+<TextureAnim num="2">
+
+	<Texture id="0">
+	</Texture>
+	<Texture id="1">
+		<rotate num="2">
+			<k t="0" value="0.000000" />
+			<k t="60" value="359.000000" />
+		</rotate>
+	</Texture>
+
+</TextureAnim>
+
+</Maratis>

@@ -1,0 +1,80 @@
+<Maratis version="3.0">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<script file="../scripts/ShadTest.lua" />
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -0.981000" />
+
+		<Light name="Light0">
+			<active value="true" />
+			<transform 
+				position="10.963587 4.270998 37.681152"
+				rotation="0.007995 51.749081 -13.442937"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="1000.000000"
+				color="1.000000 1.000000 1.000000"
+				intensity="1.000000"
+				spotAngle="40.000000"
+				spotExponent="0.050000"
+				shadow="true"
+				shadowBias="8.000000"
+				shadowBlur="0.500000"
+				shadowQuality="256" />
+			<Behavior name="Follow">
+				<properties 
+					target="Pivot"
+					delay="10.000000"
+					offset="20.000000 0.000000 0.000000"
+					local="true" />
+			</Behavior>
+		</Light>
+		<Camera name="Camera">
+			<active value="true" />
+			<transform 
+				position="68.906006 -40.811195 64.901154"
+				rotation="47.347397 0.000001 -0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.100000 0.100000 0.100000"
+				ortho="false"
+				fov="70.000000"
+				clippingNear="10.000000"
+				clippingFar="100.000000"
+				fog="false"
+				fogDistance="100.000000" />
+		</Camera>
+		<Entity name="Entity1" file="../meshs/templeLightMap.mesh">
+			<BoundingBox min="-82.634369 -25.795452 0.994312" max="80.871918 25.453894 42.512367" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="24.410633 0.000000 8.816467"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Pivot" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="3.322071 4.270996 37.681137"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="0.382076 0.382076 0.382076" />
+			<properties 
+				invisible="true" />
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>

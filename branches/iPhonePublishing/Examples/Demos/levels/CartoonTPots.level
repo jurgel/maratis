@@ -1,0 +1,82 @@
+<Maratis version="3.0">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<script file="../scripts/CartoonTPot.lua" />
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -0.981000" />
+
+		<Light name="Light0">
+			<active value="true" />
+			<transform 
+				parent="LightPivot"
+				position="-44.171749 -68.990753 82.614044"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="20000.000000"
+				color="1.000000 1.000000 1.000000"
+				intensity="1.000000"
+				spotAngle="180.000000"
+				spotExponent="0.000000"
+				shadow="false" />
+		</Light>
+		<Camera name="Camera0">
+			<active value="true" />
+			<transform 
+				position="107.700737 99.483864 88.448761"
+				rotation="62.157951 0.312068 132.903702"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="false"
+				fov="30.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000" />
+		</Camera>
+		<Entity name="Entity0" file="../meshs/CartoonTPot01.mesh">
+			<BoundingBox min="-26.876709 -17.917807 0.000000" max="30.757299 17.917807 28.220547" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 -20.000000 0.000000"
+				rotation="0.000000 0.000000 -29.433706"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Entity1" file="../meshs/CartoonTPot02.mesh">
+			<BoundingBox min="-26.876709 -17.917807 0.000000" max="30.757299 17.917807 28.220547" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 20.000000 0.000000"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="LightPivot" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 0.000000 100.000000"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="true" />
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>

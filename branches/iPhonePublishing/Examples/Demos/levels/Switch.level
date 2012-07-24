@@ -1,0 +1,58 @@
+<Maratis version="3.0">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<script file="..\Scripts\Switch.lua" />
+		<properties 
+			gravity="0.000000 0.000000 -0.981000" />
+
+		<Light name="Light0">
+			<transform 
+				position="-1.218934 0.000000 44.976501"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="2000.000000"
+				color="1.000000 1.000000 1.000000"
+				intensity="1.000000" />
+		</Light>
+		<Camera name="Camera0">
+			<transform 
+				position="0.000000 -49.076561 13.432224"
+				rotation="77.712456 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="false"
+				fov="60.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000" />
+		</Camera>
+		<Entity name="Obj1" file="..\meshs\box.mesh">
+			<transform 
+				position="0.000000 0.000000 0.000000"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Obj2" file="..\meshs\teapot.mesh">
+			<transform 
+				position="0.000000 0.000000 -4.561827"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="4.884748 4.884748 4.884748" />
+			<properties 
+				invisible="false" />
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>

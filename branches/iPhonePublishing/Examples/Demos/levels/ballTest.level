@@ -1,0 +1,257 @@
+<Maratis version="3.0">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -0.981000" />
+
+		<Light name="Light0">
+			<active value="true" />
+			<transform 
+				position="65.252594 -8.300797 80.582954"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="1000.000000"
+				color="1.000000 1.000000 1.000000"
+				intensity="1.000000"
+				spotAngle="50.000000"
+				spotExponent="0.050000"
+				shadow="false" />
+		</Light>
+		<Camera name="Camera0">
+			<active value="true" />
+			<transform 
+				position="62.282913 104.200790 34.688480"
+				rotation="89.999939 -0.000015 173.873703"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="false"
+				fov="60.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000" />
+		</Camera>
+		<Entity name="Entity42" file="../meshs/ball.mesh">
+			<BoundingBox min="-27.581814 -27.581814 -27.581814" max="27.581814 27.581814 27.581814" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="79.123909 -6.452043 50.972137"
+				rotation="-0.132441 2.562824 -0.072694"
+				scale="0.067221 0.067221 0.067221" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity0" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="57.295448 -9.819425 8.604904"
+				rotation="-1.996139 -0.974529 0.033961"
+				scale="8.447988 8.009204 1.000000" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="0.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity177" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="70.068733 -9.819425 22.938198"
+				rotation="-2.010752 -23.993139 0.037190"
+				scale="3.351938 3.177840 0.396773" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="0.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity178" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="28.995564 -9.819425 18.476154"
+				rotation="-1.996139 -0.974529 0.033961"
+				scale="1.054417 1.675898 1.000000" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="0.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity179" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="28.995564 19.094885 24.908108"
+				rotation="-1.996139 -0.974529 0.033961"
+				scale="0.479211 0.506176 2.721935" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="0.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity180" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="86.926888 19.094885 24.908108"
+				rotation="-1.996139 -0.974529 0.033961"
+				scale="0.479211 0.506176 2.721935" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="0.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity1" file="../meshs/ball.mesh">
+			<BoundingBox min="-27.581814 -27.581814 -27.581814" max="27.581814 27.581814 27.581814" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="46.872425 -6.452043 89.771027"
+				rotation="-0.132441 2.562824 -0.072694"
+				scale="0.170498 0.170498 0.170498" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="3.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity2" file="../meshs/ball.mesh">
+			<BoundingBox min="-27.581814 -27.581814 -27.581814" max="27.581814 27.581814 27.581814" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="76.960953 -6.452043 45.064796"
+				rotation="-0.132441 2.562824 -0.072694"
+				scale="0.067221 0.067221 0.067221" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity3" file="../meshs/ball.mesh">
+			<BoundingBox min="-27.581814 -27.581814 -27.581814" max="27.581814 27.581814 27.581814" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="82.390877 -6.452043 57.234741"
+				rotation="-0.132441 2.562824 -0.072694"
+				scale="0.067221 0.067221 0.067221" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Entity4" file="../meshs/ball.mesh">
+			<BoundingBox min="-27.581814 -27.581814 -27.581814" max="27.581814 27.581814 27.581814" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="73.734802 -6.452043 39.553715"
+				rotation="-0.132441 2.562824 -0.072694"
+				scale="0.067221 0.067221 0.067221" />
+			<properties 
+				invisible="false" />
+			<physics 
+				shape="Sphere"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.800000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>

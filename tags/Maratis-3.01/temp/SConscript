@@ -1,0 +1,14 @@
+# coding: utf-8
+# test sconscript
+#
+# $LastChangedDate: $
+# $LastChangedBy: dbacc $
+
+
+import os,sys
+
+Import('env')
+
+# build test_lib app
+SConscript( 'test_lib/SConscript', exports='env' )
+

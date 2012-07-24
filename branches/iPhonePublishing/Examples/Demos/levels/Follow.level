@@ -1,0 +1,67 @@
+<Maratis version="3.0">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<script file="../scripts/Follow.lua" />
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -0.981000" />
+
+		<Light name="Light0">
+			<active value="true" />
+			<transform 
+				position="23.987347 -72.252350 102.065613"
+				rotation="0.000000 0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="2000.000000"
+				color="1.000000 1.000000 1.000000"
+				intensity="1.000000" />
+		</Light>
+		<Camera name="Camera0">
+			<active value="true" />
+			<transform 
+				position="23.987305 -162.971603 302.550476"
+				rotation="30.870621 0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="false"
+				fov="40.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000" />
+		</Camera>
+		<Entity name="Obj1" file="../meshs/Jules.mesh">
+			<BoundingBox min="-4.696570 -4.532282 -0.121015" max="4.693011 4.184886 14.800737" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 0.000000 0.000000"
+				rotation="0.000000 0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+		</Entity>
+		<Entity name="Obj2" file="../meshs/robot.mesh">
+			<BoundingBox min="-10.263218 -13.997276 0.458677" max="10.263226 11.242736 31.359173" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="-59.453205 50.511566 0.000000"
+				rotation="0.000000 0.000000 -141.367508"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="false" />
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>
