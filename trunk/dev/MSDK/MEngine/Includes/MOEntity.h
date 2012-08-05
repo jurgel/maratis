@@ -177,6 +177,8 @@ public:
 	// type
 	int getType(void){ return M_OBJECT3D_ENTITY; }
 
+	void setActive(bool active);
+	
 	// invisible
 	void setInvisible(bool invisible){ m_isInvisible = invisible; }
 	bool isInvisible(void){ return m_isInvisible; }

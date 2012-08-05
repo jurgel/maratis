@@ -55,6 +55,10 @@ public:
 	virtual void createGhost(unsigned int * objectId, unsigned int shapeId, const MVector3 & position, const MQuaternion & rotation) = 0;
 	virtual void createRigidBody(unsigned int * objectId, unsigned int shapeId, const MVector3 & position, const MQuaternion & rotation, float mass) = 0;
 
+	// activate / deactivate
+	virtual void activateObject(unsigned int objectId) = 0;
+	virtual void deactivateObject(unsigned int objectId) = 0;
+	
 	// delete object
 	virtual void deleteObject(unsigned int * objectId) = 0;
 
@@ -82,6 +86,7 @@ public:
 	// objects collision
 	virtual int isObjectInCollision(unsigned int objectId) = 0;
 	virtual bool isObjectsCollision(unsigned int object1Id, unsigned int object2Id) = 0;
+	virtual bool isRayHit(const MVector3 & start, const MVector3 & end, unsigned int * objectId = NULL, MVector3 * point = NULL, MVector3 * normal = NULL) = 0;
 
 	// create shape
 	virtual void createMultiShape(unsigned int * shapeId) = 0;

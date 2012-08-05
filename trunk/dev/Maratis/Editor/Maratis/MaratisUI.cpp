@@ -2726,15 +2726,64 @@ void MaratisUI::timePosEditEvents(MGuiEditText * edit, MGuiEvent * guiEvents)
 	}
 }
 
+
+// end game
+void MaratisUI::endGame(void)
+{
+	MEngine * engine = MEngine::getInstance();
+	Maratis * maratis = Maratis::getInstance();
+	MaratisUI * UI = MaratisUI::getInstance();
+    
+	MGame * game = MEngine::getInstance()->getGame();
+	if(game)
+	{
+		MLevel * level = engine->getLevel();
+		MScene * scene = level->getCurrentScene();
+                
+		// stop sound
+		scene->stopAllSounds();
+		
+		// show mouse
+		MWindow::getInstance()->showCursor();
+		
+		// end game
+		game->end();
+		
+		// load temp level
+		const char * temp = maratis->getTempDir();
+		if(temp)
+		{
+			string tempFile(temp);
+			tempFile += "/";
+			tempFile += "temp.level";
+			M_loadLevel(tempFile.c_str(), level, false);
+		}
+		
+		scene = level->getCurrentScene();
+		
+		maratis->clearSelectedObjects();
+		UI->resizeGUI();
+		UI->editObject(NULL);
+		UI->updateSceneMenu();
+		UI->updateViewMenu();
+		
+		// update matrices
+		scene->updateObjectsMatrices();
+	}
+}
+
 // window events
 void MaratisUI::windowEvents(MWinEvent * windowEvents)
 {
-	MEngine * engine = MEngine::getInstance();
 	MMouse * mouse = MMouse::getInstance();
 	Maratis * maratis = Maratis::getInstance();
 	MaratisUI * UI = MaratisUI::getInstance();
     
     UI->m_lastInput = windowEvents->data[0];
+	
+	
+	// game events
+	gameWinEvents(windowEvents);
 	
     // game
 	MGame * game = MEngine::getInstance()->getGame();
@@ -2742,52 +2791,11 @@ void MaratisUI::windowEvents(MWinEvent * windowEvents)
 	{
 		if(game->isRunning())
 		{
-			gameWinEvents(windowEvents);
-            
 			if((windowEvents->type == MWIN_EVENT_KEY_UP) && (windowEvents->data[0] == MKEY_ESCAPE))
 			{
-				MLevel * level = engine->getLevel();
-				MScene * scene = level->getCurrentScene();
-                
-				// stop sound
-				scene->stopAllSounds();
-                
-				// show mouse
-				MWindow::getInstance()->showCursor();
-                
-				// end game
-				game->end();
-                
-				// load temp level
-				const char * temp = maratis->getTempDir();
-				if(temp)
-				{
-					string tempFile(temp);
-					tempFile += "/";
-					tempFile += "temp.level";
-					M_loadLevel(tempFile.c_str(), level, false);
-				}
-				
-				scene = level->getCurrentScene();
-                
-				maratis->clearSelectedObjects();
-				UI->resizeGUI();
-				UI->editObject(NULL);
-				UI->updateSceneMenu();
-				UI->updateViewMenu();
-                
-				// update matrices
-				scene->updateObjectsMatrices();
-                
+				UI->endGame();
 				return;
 			}
-            
-			/*
-             if(windowEvents->type == MWIN_EVENT_WINDOW_CLOSE)
-             {
-             MWindow::getInstance()->setActive(false);
-             return;
-             }*/
             
 			return;
 		}
@@ -3441,9 +3449,6 @@ void MaratisUI::gameButtonEvents(MGuiButton * button, MGuiEvent * guiEvents)
                 
                 // begin game
                 game->begin();
-                
-                // run script
-                scriptContext->runScript(engine->getLevel()->getCurrentScene()->getScriptFilename());
             }
             break;
         case MGUI_EVENT_DRAW:

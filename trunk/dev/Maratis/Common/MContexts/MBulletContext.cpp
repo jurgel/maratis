@@ -55,12 +55,18 @@ void MBulletContext::init(const MVector3 & worldMin, const MVector3 & worldMax)
 {
 	clear();
 
+	// create NULL id 0
+	m_collisionShapes.push_back(NULL);
+	m_collisionObjects.push_back(NULL);
+	m_constraints.push_back(NULL);
+	
+	// init
 	m_collisionConfiguration = new btDefaultCollisionConfiguration();
 	m_dispatcher = new btCollisionDispatcher(m_collisionConfiguration);
 
 	//int	maxProxies = 1024;
-	btVector3 worldAabbMin(worldMin.x, worldMin.y, worldMin.z);
-	btVector3 worldAabbMax(worldMax.x, worldMax.y, worldMax.z);
+	//btVector3 worldAabbMin(worldMin.x, worldMin.y, worldMin.z);
+	//btVector3 worldAabbMax(worldMax.x, worldMax.y, worldMax.z);
 	//m_overlappingPairCache = new btAxisSweep3(worldAabbMin, worldAabbMax, maxProxies);
 	m_overlappingPairCache = new btDbvtBroadphase();
 	
@@ -102,11 +108,6 @@ void MBulletContext::clear(void)
 	SAFE_DELETE(m_overlappingPairCache);
 	SAFE_DELETE(m_dispatcher);
 	SAFE_DELETE(m_collisionConfiguration);
-
-	// create NULL id 0
-	m_collisionShapes.push_back(NULL);
-	m_collisionObjects.push_back(NULL);
-	m_constraints.push_back(NULL);
 }
 
 // update simulation
@@ -153,7 +154,36 @@ void MBulletContext::createRigidBody(unsigned int * objectId, unsigned int shape
 	rigidBody->setSleepingThresholds(0.2f, 0.2f); // default : 0.8f, 1.0f
 
 	m_dynamicsWorld->addRigidBody(rigidBody);
+	
+	// add collision object
+	rigidBody->setUserPointer((void *)*objectId);
 	m_collisionObjects.push_back(rigidBody);
+}
+
+// activate / deactivate
+void MBulletContext::activateObject(unsigned int objectId)
+{
+	btCollisionObject * object = m_collisionObjects[objectId];
+	if(object)
+	{
+		if(object->getInternalType() == btCollisionObject::CO_RIGID_BODY)
+		{
+			btRigidBody * rigidBody = btRigidBody::upcast(object);
+			m_dynamicsWorld->addRigidBody(rigidBody);
+		}
+			
+		object->activate();
+		clearForces(objectId);
+	}
+}
+
+void MBulletContext::deactivateObject(unsigned int objectId)
+{
+	btCollisionObject * object = m_collisionObjects[objectId];
+	if(object)
+	{
+		m_dynamicsWorld->removeCollisionObject(object);
+	}
 }
 
 // delete object
@@ -184,9 +214,7 @@ void MBulletContext::enableObjectKinematic(unsigned int objectId)
 	object->setCollisionFlags(object->getCollisionFlags() | btCollisionObject::CF_KINEMATIC_OBJECT);
 }
 
-void MBulletContext::disableObjectKinematic(unsigned int objectId){
-
-}
+void MBulletContext::disableObjectKinematic(unsigned int objectId){}
 
 void MBulletContext::setObjectShape(unsigned int objectId, unsigned int shapeId)
 {
@@ -445,6 +473,39 @@ bool MBulletContext::isObjectsCollision(unsigned int object1Id, unsigned int obj
 		}
 	}
 
+	return false;
+}
+
+bool MBulletContext::isRayHit(const MVector3 & start, const MVector3 & end, unsigned int * objectId, MVector3 * point, MVector3 * normal)
+{
+	btVector3 bstart(start.x, start.y, start.z);
+	btVector3 bend(end.x, end.y, end.z);
+	
+	btCollisionWorld::ClosestRayResultCallback rayCallback(bstart, bend);
+	m_dynamicsWorld->rayTest(bstart, bend, rayCallback);
+	
+	if(rayCallback.hasHit())
+	{
+		if(objectId)
+			*objectId = (unsigned int)(unsigned long)rayCallback.m_collisionObject->getUserPointer();
+		
+		if(point)
+		{
+			point->x = rayCallback.m_hitPointWorld.getX();
+			point->y = rayCallback.m_hitPointWorld.getY();
+			point->z = rayCallback.m_hitPointWorld.getZ();
+		}
+		
+		if(normal)
+		{
+			normal->x = rayCallback.m_hitNormalWorld.getX();
+			normal->y = rayCallback.m_hitNormalWorld.getY();
+			normal->z = rayCallback.m_hitNormalWorld.getZ();
+		}
+		
+		return true;
+    }
+	
 	return false;
 }
 

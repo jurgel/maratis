@@ -153,6 +153,9 @@ public:
 	void end(void);
 
 	// physics
+	void prepareCollisionShape(MOEntity * entity);
+	void prepareCollisionObject(MOEntity * entity);
+	void prepareConstraints(MOEntity * entity);
 	void preparePhysics(void);
 	void updatePhysics(void);
 

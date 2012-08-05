@@ -626,12 +626,18 @@ void MWindow::setCursorPos(int x, int y)
 
 void MWindow::hideCursor(void)
 {
-	[NSCursor hide];
+	if(CGCursorIsVisible())
+    {
+        [NSCursor hide];
+    }
 }
 
 void MWindow::showCursor(void)
 {
-	[NSCursor unhide];
+	if(! CGCursorIsVisible())
+	{
+		[NSCursor unhide];
+	}
 }
 
 void MWindow::setTitle(const char * title)
@@ -732,6 +738,8 @@ bool MWindow::onEvents(void)
 	
     [AutoreleasePool drain];
     AutoreleasePool = [[NSAutoreleasePool alloc] init];
+	
+	//[[NSCursor crosshairCursor] set];
 	
 	return true;
 }
@@ -869,7 +877,7 @@ bool MWindow::create(const char * title, unsigned int width, unsigned int height
 	// title
 	if(title != NULL)
 		setTitle(title);
-	
+
 	// sync
 	//GLint sync = 60;
     //[context setValues:&sync forParameter:NSOpenGLCPSwapInterval];

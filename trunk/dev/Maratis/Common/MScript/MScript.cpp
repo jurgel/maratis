@@ -2220,14 +2220,14 @@ void MScript::runScript(const char * filename)
 	getRepertory(g_currentDirectory, filename);
 }
 
-void MScript::callFunction(const char * name)
+void MScript::callFunction(const char * name, int numArgs)
 {
 	if(m_isRunning)
 	{
 		lua_getglobal(m_state, name);
 		if(lua_isfunction(m_state, -1))
 		{
-			if(lua_pcall(m_state, 0, 0, 0) != 0)
+			if(lua_pcall(m_state, numArgs, 0, 0) != 0)
 			{
 				printf("ERROR lua script :\n %s\n", lua_tostring(m_state, -1));
 				m_isRunning = false;

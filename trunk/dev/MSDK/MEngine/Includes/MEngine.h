@@ -158,7 +158,10 @@ public:
 	static MEngine * getInstance(void);
 
 private:
-
+	
+	// active
+	bool m_isActive;
+	
 	// contexts
 	MSoundContext * m_soundContext;
 	MRenderingContext * m_renderingContext;
@@ -197,8 +200,16 @@ private:
 
 	// stores the name of the level to load when loading is save (at the end of the logic loop)
 	char * m_requestedLevelToLoad;
-
+	
+private:
+	
+	void loadLevelIfRequested(); // Checks if a level was requested to be loaded and loads it, called in the end of the logic loop
+	
 public:
+
+	// active
+	inline void setActive(bool active){ m_isActive = active; }
+	inline bool isActive(void){ return m_isActive; }
 
 	// contexts
 	void setSoundContext(MSoundContext * soundContext);
@@ -241,8 +252,8 @@ public:
 
 	// level
 	void setLevel(MLevel * level);
-	bool loadLevel(const char * filename); // Loads level immediately (not safe from Lua!)
-	void requestLoadLevel(const char * filename); // Will load level at the end of the logic loop (safe from Lua)
+	bool loadLevel(const char * filename); // loads level immediately (not safe from Lua!)
+	void requestLoadLevel(const char * filename); // will load level at the end of the logic loop (safe from Lua)
 	bool doesLevelExist(const char * filename);
 	inline MLevel * getLevel(void){ return m_level; }
 
@@ -252,13 +263,7 @@ public:
 	
 	// renderer
 	void setRenderer(MRenderer * renderer);
-	inline MRenderer * getRenderer(void){ return m_renderer; }	
-
-private:
-
-	void loadLevelIfRequested(); // Checks if a level was requested to be loaded and loads it, called in the end of the logic loop
-
-	friend class MGame;
+	inline MRenderer * getRenderer(void){ return m_renderer; }
 };
 
 

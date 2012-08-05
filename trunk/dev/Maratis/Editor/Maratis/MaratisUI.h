@@ -257,7 +257,11 @@ private:
 
 public:
 
+	// file browser
 	void openFileBrowser(const char * startPath, const char * startFile, const char * okName, void (* functionPointer)(const char * filename));
+	
+	// end game
+	void endGame(void);
 	
     //check shortcut
     bool isShortcutEngaged(struct Shortcut * sc, bool checkLastInput = true);

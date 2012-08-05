@@ -32,17 +32,18 @@
 
 
 MEngine::MEngine(void):
+m_isActive(true),
 m_level(NULL),
 m_game(NULL),
 m_renderer(NULL),
-m_requestedLevelToLoad(NULL),
 m_soundContext(NULL),
 m_renderingContext(NULL),
 m_physicsContext(NULL),
 m_scriptContext(NULL),
 m_inputContext(NULL),
 m_systemContext(NULL),
-m_packageManager(NULL)
+m_packageManager(NULL),
+m_requestedLevelToLoad(NULL)
 {}
 
 MEngine::~MEngine(void)

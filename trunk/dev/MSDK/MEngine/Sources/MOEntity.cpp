@@ -71,7 +71,7 @@ MPhysicsProperties::MPhysicsProperties(void):
 MPhysicsProperties::MPhysicsProperties(const MPhysicsProperties & physicsProperties):
 	m_constraint(NULL),
 	m_ghost(physicsProperties.m_ghost),
-	m_shapeId(0),
+	m_shapeId(physicsProperties.m_shapeId),
 	m_collisionObjectId(0),
 	m_collisionShape(physicsProperties.m_collisionShape),
 	m_friction(physicsProperties.m_friction),
@@ -188,6 +188,24 @@ MPhysicsProperties * MOEntity::createPhysicsProperties(void)
 	MPhysicsProperties * physicsProperties = new MPhysicsProperties();
 	m_physicsProperties = physicsProperties;
 	return physicsProperties;
+}
+
+void MOEntity::setActive(bool active)
+{
+	if(active == m_isActive)
+		return;
+	
+	m_isActive = active;
+	
+	MPhysicsProperties * phyProps = getPhysicsProperties();
+	if(phyProps)
+	{
+		MPhysicsContext * physics = MEngine::getInstance()->getPhysicsContext();
+		if(active)
+			physics->activateObject(phyProps->getCollisionObjectId());
+		else
+			physics->deactivateObject(phyProps->getCollisionObjectId());
+	}
 }
 
 void MOEntity::setMeshRef(MMeshRef * meshRef)

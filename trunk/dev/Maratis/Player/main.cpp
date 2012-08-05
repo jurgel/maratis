@@ -46,14 +46,9 @@ void windowEvents(MWinEvent * windowEvents)
 		}
 	}
 
-	if(windowEvents->type == MWIN_EVENT_KEY_DOWN && windowEvents->data[0] == MKEY_ESCAPE)
-    {
-		MWindow::getInstance()->setActive(false);
-	}
-
 	if(windowEvents->type == MWIN_EVENT_WINDOW_CLOSE)
     {
-		MWindow::getInstance()->setActive(false);
+		engine->setActive(false);
 	}
 }
 
@@ -216,6 +211,13 @@ int main(int argc, char **argv)
 				previousFrame = frame;
 				window->swapBuffer();
 			}
+		}
+		
+		// quit
+		if(! engine->isActive())
+		{
+			engine->getGame()->end();
+			break;
 		}
 	}
 

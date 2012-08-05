@@ -141,7 +141,7 @@ public:
 	inline bool needToUpdate(void){ return m_needToUpdate; }
 
 	// active
-	inline void setActive(bool active){ m_isActive = active; }
+	virtual void setActive(bool active){ m_isActive = active; }
 	inline bool isActive(void){ return m_isActive; }
 
 	// visibility

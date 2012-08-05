@@ -43,7 +43,7 @@ public :
 	virtual void runScript(const char * filename) = 0;
 
 	// call function
-	virtual void callFunction(const char * name) = 0;
+	virtual void callFunction(const char * name, int numArgs = 0) = 0;
 
 	// add function
 	virtual void addFunction(const char * name, int (*function)(void)) = 0;

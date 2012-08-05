@@ -291,6 +291,9 @@ void Maratis::autoSave(void)
 	m_undoNumber = m_undo;
     
 	m_firstUndo = true;
+	
+	if(m_currentLevel[0] != '\0')
+		updateTitle(" *");
 }
 
 void Maratis::undo(void)
@@ -957,7 +960,7 @@ void Maratis::addText(void)
     UI->openFileBrowser(startPath, "", "import font", okAddFont);
 }
 
-void Maratis::updateTitle(void)
+void Maratis::updateTitle(const char * additional)
 {
 	MWindow * window = MWindow::getInstance();
     
@@ -968,7 +971,10 @@ void Maratis::updateTitle(void)
 	getRepertory(levelDir, m_currentLevel);
 	getLocalFilename(levelName, levelDir, m_currentLevel);
     
-	sprintf(title, "Maratis - %s - %s", m_currentProject, levelName);
+	if(additional)
+		sprintf(title, "Maratis - %s - %s%s", m_currentProject, levelName, additional);
+	else
+		sprintf(title, "Maratis - %s - %s", m_currentProject, levelName);
 	window->setTitle(title);
 }
 
@@ -1179,7 +1185,7 @@ void Maratis::save(void)
     {
 		saveAs();
 	}
-        else
+	else
 	{
 		xmlLevelSave(engine->getLevel(), m_currentLevel);
 		MProject proj;
@@ -1193,6 +1199,8 @@ void Maratis::save(void)
 		if(! proj.saveXML(m_currentProject))
 			newProject();
 	}
+	
+	updateTitle();
 }
 
 void Maratis::okSaveAs(const char * filename)
@@ -3628,6 +3636,7 @@ void Maratis::drawCamera(MScene * scene, MOCamera * camera)
 	// draw scene
 	camera->enable();
 	scene->draw(camera);
+	scene->drawObjectsBehaviors();
 }
 
 void Maratis::drawTriangles(MMesh * mesh)
@@ -3784,6 +3793,7 @@ void Maratis::drawMainView(MScene * scene)
     
 	render->enableDepthTest();
 	scene->draw(camera);
+	scene->drawObjectsBehaviors();
     
 	// draw extra (box, triggers...)
 	render->disableLighting();

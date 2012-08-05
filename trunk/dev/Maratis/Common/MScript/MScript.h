@@ -62,7 +62,7 @@ public:
 	void runScript(const char * filename);
 
 	// call function
-	void callFunction(const char * name);
+	void callFunction(const char * name, int numArgs = 0);
 
 	// add function
 	void addFunction(const char * name, int (*function)(void));

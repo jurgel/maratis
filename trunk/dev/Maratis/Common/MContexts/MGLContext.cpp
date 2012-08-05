@@ -200,6 +200,17 @@ m_currentFrameBuffer(0)
 	glLineWidth(1);
 	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 
+	// point
+	//glPointSize(2.0);
+	//glEnable(GL_POINT_SMOOTH);
+	
+	//float coeffs[] = {1.0f, 0, 0};
+	//glPointParameterfv(GL_POINT_DISTANCE_ATTENUATION, coeffs);
+	
+	//glPointParameterf (GL_POINT_SIZE_MAX, 100.0);
+	//glPointParameterf (GL_POINT_SIZE_MIN, 1.0f);
+	
+	
 	// stencil
 	glClearStencil(0);
 

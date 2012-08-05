@@ -152,7 +152,7 @@ private:
 private:
 
 	// title
-	void updateTitle(void);
+	void updateTitle(const char * additional = NULL);
 
 	// names
 	void getNewObjectName(const char * objectName, char * name);

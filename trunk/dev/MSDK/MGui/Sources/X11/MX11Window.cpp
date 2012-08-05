@@ -40,6 +40,9 @@
 #include <GL/gl.h>
 #include <GL/glx.h>
 
+#ifndef WIN32
+        #include <unistd.h>
+#endif
 
 
 // start time
@@ -442,7 +445,9 @@ bool MWindow::onEvents(void)
 
 				int car = translateChar(&event.xkey);
 
-				if(car == 127 || car == 32 || car == 13 || car == 9) // not return, space, delete etc..
+				//if(car == 127 || car == 32 || car == 13 || car == 9) // not return, space, delete etc..
+				//	break;
+				if(car == -1) 
 					break;
 
 				mevent.type = MWIN_EVENT_CHAR;

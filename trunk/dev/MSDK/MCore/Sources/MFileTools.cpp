@@ -34,6 +34,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <stdarg.h>
+#include <algorithm>
 
 #ifdef WIN32
 	#include <direct.h>
@@ -41,9 +42,11 @@
 	#define rmdir _rmdir
 #else
 	#define mkdir(file) mkdir(file, 0777)
+        #include <unistd.h>
 #endif
 
 static MFileOpenHook* s_fileOpenHook = 0;
+
 
 
 bool copyFile(const char * inFilename, const char * outFilename)
@@ -280,6 +283,8 @@ bool readDirectory(const char * filename, vector<string> * files, bool hiddenFil
 		}
     }
 
+	sort(files->begin(), files->end());
+	
     closedir(pdir);
     return true;
 }

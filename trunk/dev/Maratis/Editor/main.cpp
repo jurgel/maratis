@@ -108,6 +108,7 @@ int main(int argc, char **argv)
 	gui->addFont(new MGuiTextureFont("font/default.tga"));
 
 	// init MaratisUI
+	MaratisUI * UI = MaratisUI::getInstance();
 	window->setPointerEvent(MaratisUI::windowEvents);
 
 	// logo
@@ -210,6 +211,12 @@ int main(int argc, char **argv)
 				previousFrame = frame;
 				window->swapBuffer();
 			}
+		}
+		
+		if(! engine->isActive())
+		{
+			UI->endGame();
+			engine->setActive(true);
 		}
 	}
 

@@ -109,7 +109,7 @@ public:
 	void clearQueueDatas(void);
 
 	// scenes
-	void changeCurrentScene(unsigned int id); // Does not change scene straight away, instead it requests to do it (will be done in the end of the logic loop)
+	void changeCurrentScene(unsigned int id); // does not change scene straight away, instead it requests to do it (will be done in the end of the logic loop)
 	void deleteScene(unsigned int id);
 	bool getSceneIndexByName(const char * name, unsigned int * index);
 	MScene * addNewScene(void);

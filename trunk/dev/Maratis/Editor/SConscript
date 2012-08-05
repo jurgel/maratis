@@ -1,6 +1,6 @@
 # coding: utf-8
 # Maratis/Editor framework build Sconscript
-# $LastChangedDate: 2012-01-22 19:00:08 +0700 (Sun, 22 Jan 2012) $
+# $LastChangedDate: 2012-07-29 18:55:24 +0700 (Sun, 29 Jul 2012) $
 # $LastChangedBy: anael.seghezzi@gmail.com $
 
 
@@ -34,8 +34,7 @@ env_local.AppendUnique(LIBS = ['MaratisCommon',
 
 if sys.platform=='linux2' or sys.platform=='linux3':
     env_local.AppendUnique(LIBS = ['GL',
-                                   'Xxf86vm',
-                                   'X11',
+                                   'Xxf86vm','X11',
                                    'dl'] )
 
 # add 3rdparty libraries parameters
