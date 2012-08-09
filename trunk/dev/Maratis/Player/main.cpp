@@ -173,18 +173,19 @@ int main(int argc, char **argv)
 		// on events
 		if(window->onEvents())
 		{
-			// compute target tick
-			unsigned long currentTick = window->getSystemTick();
-
-			unsigned long tick = currentTick - startTick;
-			unsigned long frame = (unsigned long)(tick * (frequency * 0.001f));
-
-			// update elapsed time
-			unsigned int i;
-			unsigned int steps = (unsigned int)(frame - previousFrame);
-
 			if(window->getFocus())
 			{
+				// compute target tick
+				unsigned long currentTick = window->getSystemTick();
+
+				unsigned long tick = currentTick - startTick;
+				unsigned long frame = (unsigned long)(tick * (frequency * 0.001f));
+
+				// update elapsed time
+				unsigned int i;
+				unsigned int steps = (unsigned int)(frame - previousFrame);
+
+			
 				// don't wait too much
 				if(steps >= (frequency/2))
 				{
@@ -208,8 +209,7 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				previousFrame = frame;
-				window->swapBuffer();
+				window->sleep(0.1);
 			}
 		}
 		
@@ -219,6 +219,8 @@ int main(int argc, char **argv)
 			engine->getGame()->end();
 			break;
 		}
+		
+		window->sleep(0.001);
 	}
 
 	maratis->clear();

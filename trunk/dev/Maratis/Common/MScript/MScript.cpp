@@ -234,6 +234,35 @@ int getObject(lua_State * L)
 	return 1;
 }
 
+int addEntity(lua_State * L)
+{
+	MLevel * level = MEngine::getInstance()->getLevel();
+	MScene * scene = level->getCurrentScene();
+	
+	if(! isFunctionOk(L, "addEntity", 3))
+		return 0;
+	
+	int nbArguments = lua_gettop(L);
+	
+	const char* name = lua_tostring(L,1);
+	const char* filename = lua_tostring(L,2);
+	MVector3 axis;
+
+	if(filename)
+	{
+		MMeshRef * meshRef = level->loadMesh(filename);
+		if(meshRef)
+		{
+			MOEntity * entity = scene->addNewEntity(meshRef);
+			getVector3(L,3, &axis);
+			entity->setName(name);	
+			entity->setPosition(axis);
+		}
+	}
+
+	return 0;
+}
+
 int rotate(lua_State * L)
 {
 	if(! isFunctionOk(L, "rotate", 3))

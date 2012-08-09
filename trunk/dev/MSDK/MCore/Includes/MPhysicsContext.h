@@ -76,6 +76,9 @@ public:
 	virtual void setObjectTransform(unsigned int objectId, const MVector3 & position, const MQuaternion & rotation) = 0;
 	virtual void getObjectTransform(unsigned int objectId, MVector3 * position, MQuaternion * rotation) = 0;
 
+	virtual void setObjectUserPointer(unsigned int objectId, void * userPointer) = 0;
+	virtual void * getObjectUserPointer(unsigned int objectId) = 0;
+	
 	// affectors
 	virtual void addCentralForce(unsigned int objectId, const MVector3 & force) = 0;
 	virtual void getCentralForce(unsigned int objectId, MVector3 * force) = 0;
@@ -84,7 +87,7 @@ public:
 	virtual void clearForces(unsigned int objectId) = 0;
 
 	// objects collision
-	virtual int isObjectInCollision(unsigned int objectId) = 0;
+	virtual int isObjectInCollision(unsigned int objectId, unsigned int * collisionList = NULL, unsigned int size = 0) = 0;
 	virtual bool isObjectsCollision(unsigned int object1Id, unsigned int object2Id) = 0;
 	virtual bool isRayHit(const MVector3 & start, const MVector3 & end, unsigned int * objectId = NULL, MVector3 * point = NULL, MVector3 * normal = NULL) = 0;
 

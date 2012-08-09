@@ -124,6 +124,9 @@ public:
 	// execute
 	void execute(const char * path, const char * args);
 	
+	// sleep
+	void sleep(double time);
+	
 	// files parsing
     bool getOpenMultipleFiles(const char * title, const char * filter, string * repertory, list <string> * filesList, const char * startPath = NULL);
     const char * getOpenDir(const char * title, const char * startPath = NULL);

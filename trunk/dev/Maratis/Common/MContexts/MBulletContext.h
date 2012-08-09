@@ -41,13 +41,21 @@ class MBulletContext : public MPhysicsContext
 {
 private:
 
+	class MBUserData
+	{
+	public:
+		MBUserData(void):m_objectId(0), m_userPointer(NULL){}
+		unsigned int m_objectId;
+		void * m_userPointer;
+	};
+	
 	btDefaultCollisionConfiguration * m_collisionConfiguration;
 	btCollisionDispatcher * m_dispatcher;
-	//btAxisSweep3 * m_overlappingPairCache;
 	btDbvtBroadphase * m_overlappingPairCache;
 	btSequentialImpulseConstraintSolver * m_solver;
 	btDiscreteDynamicsWorld * m_dynamicsWorld;
 	
+	vector<MBUserData*> m_userDatas;
 	vector<btCollisionShape*> m_collisionShapes;
 	vector<btCollisionObject*> m_collisionObjects;
 	vector<btTypedConstraint*> m_constraints;
@@ -97,6 +105,9 @@ public:
 	void setObjectTransform(unsigned int objectId, const MVector3 & position, const MQuaternion & rotation);
 	void getObjectTransform(unsigned int objectId, MVector3 * position, MQuaternion * rotation);
 
+	void setObjectUserPointer(unsigned int objectId, void * userPointer);
+	void * getObjectUserPointer(unsigned int objectId);
+	
 	// affectors
 	void addCentralForce(unsigned int objectId, const MVector3 & force);
 	void getCentralForce(unsigned int objectId, MVector3 * force);
@@ -105,7 +116,7 @@ public:
 	void clearForces(unsigned int objectId);
 
 	// objects collision
-	int isObjectInCollision(unsigned int objectId);
+	int isObjectInCollision(unsigned int objectId, unsigned int * collisionList = NULL, unsigned int size = 0);
 	bool isObjectsCollision(unsigned int objectId, unsigned int object2Id);
 	bool isRayHit(const MVector3 & start, const MVector3 & end, unsigned int * objectId = NULL, MVector3 * point = NULL, MVector3 * normal = NULL);
 	

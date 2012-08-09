@@ -40,6 +40,8 @@ private:
 	// data
 	bool m_mipmap;
 	unsigned int m_components;
+	unsigned int m_width;
+	unsigned int m_height;
 	unsigned int m_textureId;
 
 public:
@@ -66,6 +68,10 @@ public:
 	// data
 	inline bool isMipmapEnabled(void){ return m_mipmap; }
 	inline unsigned int getComponents(void){ return m_components; }
+	inline unsigned int getWidth(void){ return m_width; }
+	inline unsigned int getHeight(void){ return m_height; }
+	inline void setWidth(unsigned int width){ m_width = width; }
+	inline void setHeight(unsigned int height){ m_height = height; }
 	inline void setTextureId(unsigned int textureId){ m_textureId = textureId; }
 	inline unsigned int getTextureId(void){ return m_textureId; }
 };

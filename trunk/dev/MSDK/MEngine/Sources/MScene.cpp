@@ -364,28 +364,28 @@ void MScene::prepareCollisionObject(MOEntity * entity)
 	}
 	else // create collision object
 	{
+		unsigned int collisionObjectId;
+		
 		if(phyProps->isGhost())
 		{
 			MVector3 euler = entity->getTransformedRotation();
 			
-			unsigned int collisionObjectId;
 			physics->createGhost(
-								 &collisionObjectId, shapeId, 
-								 entity->getTransformedPosition(),
-								 MQuaternion(euler.x, euler.y, euler.z)
-								 );
+				&collisionObjectId, shapeId, 
+				entity->getTransformedPosition(),
+				MQuaternion(euler.x, euler.y, euler.z)
+			);
 			
 			phyProps->setShapeId(shapeId);
 			phyProps->setCollisionObjectId(collisionObjectId);
 		}
 		else
 		{
-			unsigned int collisionObjectId;
 			physics->createRigidBody(
-									 &collisionObjectId, shapeId, 
-									 entity->getPosition(), entity->getRotation(),
-									 phyProps->getMass()
-									 );
+				&collisionObjectId, shapeId, 
+				entity->getPosition(), entity->getRotation(),
+				phyProps->getMass()
+			);
 			
 			phyProps->setShapeId(shapeId);
 			phyProps->setCollisionObjectId(collisionObjectId);
@@ -396,10 +396,14 @@ void MScene::prepareCollisionObject(MOEntity * entity)
 			physics->setObjectLinearFactor(collisionObjectId, *phyProps->getLinearFactor());
 			physics->setObjectFriction(collisionObjectId, phyProps->getFriction());
 		}
+		
+		// deactivate
+		if(! entity->isActive())
+			physics->deactivateObject(collisionObjectId);
+		
+		// set user pointer (entity)
+		physics->setObjectUserPointer(collisionObjectId, entity);
 	}
-	
-	if(! entity->isActive())
-		physics->deactivateObject(phyProps->getCollisionObjectId());
 }
 
 void MScene::prepareConstraints(MOEntity * entity)

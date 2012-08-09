@@ -2,6 +2,7 @@
 ###########################
 trunk/dev/build/*
 trunk/dev/prod/*
+*.svn
 
 # Compiled source #
 ###################
@@ -25,6 +26,7 @@ trunk/dev/prod/*
 .DS_Store
 .DS_Store?
 ._*
+*~
 .Spotlight-V100
 .Trashes
 Icon?

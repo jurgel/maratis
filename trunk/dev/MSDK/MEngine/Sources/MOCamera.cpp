@@ -40,7 +40,10 @@ m_fov(60),
 m_fogDistance(0),
 m_clippingNear(1),
 m_clippingFar(1000),
-m_clearColor(0.2f, 0.3f, 0.4f)
+m_clearColor(0.2f, 0.3f, 0.4f),
+m_sceneLayer(0),
+m_renderColorTexture(NULL),
+m_renderDepthTexture(NULL)
 {
 	m_currentViewport[0] = 0;
 	m_currentViewport[1] = 0;
@@ -63,7 +66,10 @@ m_fov(camera.m_fov),
 m_fogDistance(camera.m_fogDistance),
 m_clippingNear(camera.m_clippingNear),
 m_clippingFar(camera.m_clippingFar),
-m_clearColor(camera.m_clearColor)
+m_clearColor(camera.m_clearColor),
+m_sceneLayer(camera.m_sceneLayer),
+m_renderColorTexture(NULL),
+m_renderDepthTexture(NULL)
 {}
 
 MVector3 MOCamera::getProjectedPoint(const MVector3 & point) const

@@ -78,7 +78,7 @@ private:
 
 public:
 
-	// texture id
+	// texture ref
 	void setTextureRef(MTextureRef * texRef){ m_texRef = texRef; }
 	MTextureRef * getTextureRef(void){ return m_texRef; }
 

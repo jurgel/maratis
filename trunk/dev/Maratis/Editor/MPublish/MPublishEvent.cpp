@@ -44,15 +44,12 @@ static std::string s_dataDir;
 
 const char* getPubDir()
 {
-	if(s_pubDir.empty())
-	{
-		MEngine* engine = MEngine::getInstance();
-		MSystemContext* system = engine->getSystemContext();
-
-		char dir[256];
-		getGlobalFilename(dir, system->getWorkingDirectory(), "published");
-		s_pubDir = dir;
-	}
+	MEngine* engine = MEngine::getInstance();
+	MSystemContext* system = engine->getSystemContext();
+	
+	char dir[256];
+	getGlobalFilename(dir, system->getWorkingDirectory(), "published");
+	s_pubDir = dir;
 
 	return s_pubDir.c_str();
 }
@@ -392,15 +389,14 @@ void copySysOSX(const char* projName)
 			
 			strcpy(ext, "");
 			sprintf(srcName, "%s/Contents/MacOS/%s", appPath, appName);
-			sprintf(destName, "%s/Contents/MacOS/%s", appPath, filename);
-			rename(srcName, destName);
-			
+		
 			strcpy(ext, ".mproj");
-			embedProject(destName, destName, filename, level, proj.renderer.c_str());
-			chmod(destName, 0777);
+			embedProject(srcName, srcName, filename, level, proj.renderer.c_str());
+			chmod(srcName, 0777);
 			
 			// we need to put all data in app/Contents/Resources/
 			sprintf(destName, "%s/Contents/Resources", appPath);
+			createDirectory(destName);
 			s_dataDir = destName;
 		}
 	}

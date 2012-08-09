@@ -81,6 +81,11 @@ void MBulletContext::clear(void)
 	unsigned int i;
 	unsigned int id;
 
+	// delete user data
+	for(i=0; i<m_userDatas.size(); i++){
+		SAFE_DELETE(m_userDatas[i]);
+	}
+	
 	// delete constraints
 	for(i=0; i<m_constraints.size(); i++){
 		id = i;
@@ -99,6 +104,7 @@ void MBulletContext::clear(void)
 		deleteShape(&id);
 	}
 
+	m_userDatas.clear();
 	m_collisionObjects.clear();
 	m_collisionShapes.clear();
 	m_constraints.clear();
@@ -155,8 +161,13 @@ void MBulletContext::createRigidBody(unsigned int * objectId, unsigned int shape
 
 	m_dynamicsWorld->addRigidBody(rigidBody);
 	
+	// user data
+	MBUserData * userData = new MBUserData();
+	userData->m_objectId = *objectId;
+	m_userDatas.push_back(userData);
+	
 	// add collision object
-	rigidBody->setUserPointer((void *)*objectId);
+	rigidBody->setUserPointer(userData);
 	m_collisionObjects.push_back(rigidBody);
 }
 
@@ -354,6 +365,29 @@ void MBulletContext::getObjectTransform(unsigned int objectId, MVector3 * positi
 	}
 }
 
+void MBulletContext::setObjectUserPointer(unsigned int objectId, void * userPointer)
+{
+	btCollisionObject * object = m_collisionObjects[objectId];
+	if(object)
+	{
+		MBUserData * userData = (MBUserData *)object->getUserPointer();
+		userData->m_userPointer = userPointer;
+	}
+}
+
+void * MBulletContext::getObjectUserPointer(unsigned int objectId)
+{
+	btCollisionObject * object = m_collisionObjects[objectId];
+	if(object)
+	{
+		MBUserData * userData = (MBUserData *)object->getUserPointer();
+		return userData->m_userPointer;
+	}
+	
+	return NULL;
+}
+
+
 // affectors
 void MBulletContext::addCentralForce(unsigned int objectId, const MVector3 & force)
 {
@@ -418,7 +452,7 @@ void MBulletContext::clearForces(unsigned int objectId)
 }
 
 // objects collision
-int MBulletContext::isObjectInCollision(unsigned int objectId)
+int MBulletContext::isObjectInCollision(unsigned int objectId, unsigned int * collisionList, unsigned int size)
 {
 	int nbColl = 0;
 	btCollisionObject * object = m_collisionObjects[objectId];
@@ -438,6 +472,18 @@ int MBulletContext::isObjectInCollision(unsigned int objectId)
 				btManifoldPoint & pt = contactManifold->getContactPoint(j);
 				if(pt.getDistance() < 0.0f)
 				{
+					if(collisionList && nbColl < size)
+					{
+						MBUserData * userData;
+						
+						if(obA != object)
+							userData = (MBUserData *)obA->getUserPointer();
+						else
+							userData = (MBUserData *)obB->getUserPointer();
+						
+						collisionList[nbColl] = userData->m_objectId;
+					}
+						
 					nbColl++;
 					break;
 				}
@@ -487,7 +533,10 @@ bool MBulletContext::isRayHit(const MVector3 & start, const MVector3 & end, unsi
 	if(rayCallback.hasHit())
 	{
 		if(objectId)
-			*objectId = (unsigned int)(unsigned long)rayCallback.m_collisionObject->getUserPointer();
+		{
+			MBUserData * userData = (MBUserData *)rayCallback.m_collisionObject->getUserPointer();
+			*objectId = userData->m_objectId;
+		}
 		
 		if(point)
 		{

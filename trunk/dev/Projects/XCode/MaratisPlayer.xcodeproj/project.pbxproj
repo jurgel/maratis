@@ -2117,6 +2117,7 @@
 					../../../../3rdparty/zlib,
 					../../../../3rdparty/npk/include,
 				);
+				INFOPLIST_FILE = info.plist;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
