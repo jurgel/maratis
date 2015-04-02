@@ -1,8 +1,6 @@
 # build and bin directory #
 ###########################
-trunk/dev/build/*
-trunk/dev/prod/*
-*.svn
+Build/*
 
 # Compiled source #
 ###################

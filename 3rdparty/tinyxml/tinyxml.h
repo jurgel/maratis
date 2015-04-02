@@ -22,7 +22,7 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-/* This file has been altered by Anael Seghezzi (QueryUIntAttribute) */
+/* This file has been altered by Anael Seghezzi (QueryUIntAttribute, LoadBuffer) */
 
 
 #ifndef TINYXML_INCLUDED
@@ -1422,7 +1422,7 @@ public:
 		file location. Streaming may be added in the future.
 	*/
 	
-	// Anaël : added reading xml from a buffer
+	// Load a file from a buffer
 	bool LoadBuffer(char* buf, long length, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 	
 	bool LoadFile( FILE*, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );

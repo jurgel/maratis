@@ -22,7 +22,7 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-/* This file has been altered by Anael Seghezzi (QueryUIntAttribute) */
+/* This file has been altered by Anael Seghezzi (QueryUIntAttribute, LoadBuffer) */
 
 
 #include <ctype.h>
