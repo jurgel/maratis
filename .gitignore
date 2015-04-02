@@ -21,6 +21,7 @@ Build/*
 
 # OS generated files #
 ######################
+*.user
 .DS_Store
 .DS_Store?
 ._*
