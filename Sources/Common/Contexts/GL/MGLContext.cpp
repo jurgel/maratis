@@ -174,14 +174,6 @@ GLenum returnAttachType(M_FRAME_BUFFER_ATTACHMENT type)
 MGLContext::MGLContext(void):
 m_currentFrameBuffer(0)
 {
-    // glew init
-    GLenum err = glewInit();
-    if (GLEW_OK != err)
-    {
-      /* Problem: glewInit failed, something is seriously wrong. */
-      fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
-    }
-
     // version
     const char * version = (const char *)glGetString(GL_VERSION);
     if(version)
