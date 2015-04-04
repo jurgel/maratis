@@ -36,6 +36,9 @@
     #include <OpenGL/OpenGL.h>
     #include <OpenGL/gl.h>
 #else
+#ifdef WIN32
+    #define GLEW_STATIC
+#endif
     #include <GL/glew.h>
 #endif
 

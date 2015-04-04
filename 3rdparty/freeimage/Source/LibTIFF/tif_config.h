@@ -137,7 +137,9 @@
 #define HAVE_MEMSET 1
 
 /* Define to 1 if you have the `mmap' function. */
-#define HAVE_MMAP 1
+#ifndef WIN32
+    #define HAVE_MMAP 1
+#endif
 
 /* Define to 1 if you have the `pow' function. */
 #define HAVE_POW 1

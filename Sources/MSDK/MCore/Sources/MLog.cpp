@@ -90,6 +90,7 @@ void MLog::log(int severity, const char * function, const char * filename, const
 
     std::cout<< sev <<"\t "<< m_string << "\t in " << (function?function:"?")
         //<< " in "<< (filename?filename:"?") // do we add filename in console ?
+        << " @ " << line_no
         << std::endl;
 
 	if(m_logfstream.good())
