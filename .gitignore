@@ -1,6 +1,6 @@
 # build and bin directory #
 ###########################
-Build/*
+Build*/*
 
 # Compiled source #
 ###################

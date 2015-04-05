@@ -36,7 +36,13 @@
 
 // Common
 #include <GUI/MGUI.h>
+
+#ifdef ANDROID
+#include <Contexts/ES2/MES2Context.h>
+#else
 #include <Contexts/GL/MGLContext.h>
+#endif
+
 #include <Contexts/Input/MInput.h>
 #include <Contexts/Bullet/MBulletContext.h>
 #include <Loaders/FreeImage/MFreeImageLoader.h>
@@ -66,7 +72,11 @@ void winEvents(MWindow *rootWindow, MWIN_EVENT_TYPE event)
     case MWIN_EVENT_CREATE:
     {
         // create a rendering context
+#ifdef ANDROID
+        render = new MES2Context();
+#else
         render = new MGLContext();
+#endif
         engine->setRenderingContext(render);
 
         // create a input context

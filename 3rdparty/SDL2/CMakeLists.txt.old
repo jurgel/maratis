@@ -1,0 +1,64 @@
+## Find source and headers
+
+FILE(GLOB HEADERS
+  include/*.h
+)
+FILE(GLOB SOURCES
+  src/*.c*
+  src/atomic/*.c*
+  src/audio/*.c*
+  src/cpuinfo/*.c*
+  src/dynapi/*.c*
+  src/events/*.c*
+  src/file/*.c*
+  src/libm/*.c*
+  src/render/*.c*
+  src/stdlib/*.c*
+  src/thread/*.c*
+  src/timer/*.c*
+  src/video/*.c*
+)
+
+IF(APPLE)
+  FILE(GLOB OS_HEADERS src/cocoa_*.h src/nsgl_*.h)
+  FILE(GLOB OS_SOURCES src/cocoa_*.c src/nsgl_*.c src/cocoa_*.m src/nsgl_*.m)
+  ADD_DEFINITIONS(-D_GLFW_COCOA)
+  ADD_DEFINITIONS(-D_GLFW_NSGL)
+ENDIF(APPLE)
+
+IF(UNIX AND NOT APPLE)
+  FILE(GLOB OS_HEADERS
+  )
+  FILE(GLOB OS_SOURCES
+	src/core/linux/*.c*
+	src/filesystem/*.c*
+	src/haptic/linux/*.c*
+	src/main/dummy/*.c*
+	src/render/opengl/*.c*
+	src/thread/pthread/*.c*
+	src/video/x11/*.c*
+  )
+
+  INCLUDE_DIRECTORIES(include/config_linux)
+
+  ADD_DEFINITIONS(-DUSING_GENERATED_CONFIG_H)
+  ADD_DEFINITIONS(-DHAVE_LINUX_VERSION_H)
+  ADD_DEFINITIONS(-D_REENTRANT)
+  ADD_DEFINITIONS(-m3dnow)
+  ADD_DEFINITIONS(-mmmx)
+  ADD_DEFINITIONS(-msse)
+  ADD_DEFINITIONS(-msse2)
+ENDIF(UNIX AND NOT APPLE)
+
+IF(CMAKE_HAS_SORT)
+  LIST(SORT SOURCES)
+  LIST(SORT OS_HEADERS)
+  LIST(SORT OS_SOURCES)
+ENDIF(CMAKE_HAS_SORT)
+
+## Build
+ADD_DEFINITIONS(-DHAVE_LIBC)
+
+INCLUDE_DIRECTORIES(include)
+
+ADD_LIBRARY(SDL2 STATIC ${SOURCES} ${OS_HEADERS} ${OS_SOURCES})

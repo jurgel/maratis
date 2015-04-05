@@ -184,9 +184,13 @@ if(CYGWIN)
   set(SDL_CFLAGS "${SDL_CFLAGS} -I/usr/include/mingw")
 endif()
 
-add_definitions(-DUSING_GENERATED_CONFIG_H)
-# General includes
-include_directories(${SDL2_BINARY_DIR}/include ${SDL2_SOURCE_DIR}/include)
+if(ANDROID)
+	include_directories(${SDL2_SOURCE_DIR}/include)
+ELSE()
+	add_definitions(-DUSING_GENERATED_CONFIG_H)
+	# General includes
+	include_directories(${SDL2_BINARY_DIR}/include ${SDL2_SOURCE_DIR}/include)
+ENDIF()
 
 set(SDL_SUBSYSTEMS
 	Atomic Audio Video Render Events Joystick Haptic Power Threads Timers
@@ -249,7 +253,7 @@ set_option(RENDER_D3D          "Enable the Direct3D render driver" ${WINDOWS})
 
 # TODO: We should (should we?) respect cmake's ${BUILD_SHARED_LIBS} flag here
 # The options below are for compatibility to configure's default behaviour.
-set(SDL_SHARED ON CACHE BOOL "Build a shared version of the library")
+set(SDL_SHARED OFF CACHE BOOL "Build a shared version of the library")
 set(SDL_STATIC ON CACHE BOOL "Build a static version of the library")
 
 # General source files
@@ -628,7 +632,7 @@ if(SDL_VIDEO)
 endif()
 
 # Platform-specific options and settings
-if(UNIX AND NOT APPLE)
+if(UNIX AND NOT APPLE AND NOT ANDROID)
   if(SDL_AUDIO)
 	if(SYSV5 OR SOLARIS OR HPUX)
 		set(SDL_AUDIO_DRIVER_SUNAUDIO 1)
@@ -1073,6 +1077,60 @@ elseif(HAIKU)
   endif()
 
   CheckPTHREAD()
+elseif(ANDROID)
+  file(GLOB ANDROID_LIB
+	${SDL2_SOURCE_DIR}/src/core/android/*.c
+	${SDL2_SOURCE_DIR}/src/main/android/*.c
+	${SDL2_SOURCE_DIR}/src/loadso/dlopen/*.c
+  )
+  set(SOURCE_FILES ${SOURCE_FILES} ${ANDROID_LIB})
+
+  if(SDL_AUDIO)
+	file(GLOB AUDIO_SOURCES ${SDL2_SOURCE_DIR}/src/audio/android/*.c)
+	set(SOURCE_FILES ${SOURCE_FILES} ${AUDIO_SOURCES})
+	set(HAVE_SDL_AUDIO TRUE)
+  endif()
+
+  if(SDL_JOYSTICK)
+	file(GLOB JOYSTICK_SOURCES ${SDL2_SOURCE_DIR}/src/joystick/android/*.c)
+	set(SOURCE_FILES ${SOURCE_FILES} ${JOYSTICK_SOURCES})
+	set(HAVE_SDL_JOYSTICK TRUE)
+  endif()
+
+  if(SDL_HAPTIC)
+	file(GLOB HAPTIC_SOURCES ${SDL2_SOURCE_DIR}/src/haptic/dummy/*.c)
+	set(SOURCE_FILES ${SOURCE_FILES} ${HAPTIC_SOURCES})
+	set(HAVE_SDL_HAPTIC TRUE)
+  endif()
+
+  if(SDL_POWER)
+	file(GLOB POWER_SOURCES ${SDL2_SOURCE_DIR}/src/power/android/*.c)
+	set(SOURCE_FILES ${SOURCE_FILES} ${POWER_SOURCES})
+	set(HAVE_SDL_POWER TRUE)
+  endif()
+
+  if(SDL_TIMERS)
+	set(SDL_TIMER_UNIX 1)
+	file(GLOB TIMER_SOURCES ${SDL2_SOURCE_DIR}/src/timer/unix/*.c)
+	set(SOURCE_FILES ${SOURCE_FILES} ${TIMER_SOURCES})
+	set(HAVE_SDL_TIMERS TRUE)
+  endif(SDL_TIMERS)
+
+  if(SDL_FILESYSTEM)
+	file(GLOB FILESYSTEM_SOURCES ${SDL2_SOURCE_DIR}/src/filesystem/dummy/*.c)
+	set(SOURCE_FILES ${SOURCE_FILES} ${FILESYSTEM_SOURCES})
+	set(HAVE_SDL_FILESYSTEM TRUE)
+  endif()
+
+  if(SDL_VIDEO)
+	if(VIDEO_OPENGL)
+	  file(GLOB VIDEO_ANDROID_SOURCES ${SDL2_SOURCE_DIR}/src/video/android/*.c)
+	  set(SOURCE_FILES ${SOURCE_FILES} ${VIDEO_ANDROID_SOURCES})
+	  set(HAVE_VIDEO_OPENGL TRUE)
+	endif()
+  endif()
+
+  CheckPTHREAD()
 endif()
 
 # Dummies
@@ -1182,15 +1240,6 @@ if(NOT WINDOWS OR CYGWIN)
 
   # MESSAGE(STATUS "SDL_LIBS: ${SDL_LIBS}")
   # MESSAGE(STATUS "SDL_STATIC_LIBS: ${SDL_STATIC_LIBS}")
-
-  configure_file("${SDL2_SOURCE_DIR}/sdl2.pc.in"
-	"${SDL2_BINARY_DIR}/sdl2.pc" @ONLY)
-  configure_file("${SDL2_SOURCE_DIR}/sdl2-config.in"
-	"${SDL2_BINARY_DIR}/sdl2-config")
-  configure_file("${SDL2_SOURCE_DIR}/sdl2-config.in"
-	"${SDL2_BINARY_DIR}/sdl2-config" @ONLY)
-  configure_file("${SDL2_SOURCE_DIR}/SDL2.spec.in"
-	"${SDL2_BINARY_DIR}/SDL2.spec" @ONLY)
 endif()
 
 ##### Info output #####

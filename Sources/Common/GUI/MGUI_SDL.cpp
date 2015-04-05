@@ -30,11 +30,17 @@
 
 #include <tinycthread.h>
 
+#ifndef ANDROID
+#ifdef __APPLE__
+    #include <OpenGL/OpenGL.h>
+    #include <OpenGL/gl.h>
 #ifdef WIN32
     #define GLEW_STATIC
 #endif
+    #include <GL/glew.h>
+#endif
+#endif
 
-#include <GL/glew.h>
 #include <SDL.h>
 
 #include <MEngine.h>
@@ -343,6 +349,7 @@ MWindow * MGUI_createWindow(const char * title, int x, int y, unsigned int width
         return NULL;
     }
 
+#ifndef ANDROID
     // glew init
     glewExperimental = GL_TRUE;
     GLenum err = glewInit();
@@ -353,6 +360,7 @@ MWindow * MGUI_createWindow(const char * title, int x, int y, unsigned int width
       SDL_Quit();
       return NULL;
     }
+#endif
 
     MSDLWindow * window = new MSDLWindow(sdlWindow, sdlContext, x, y, width, height, eventCallback);
     windows.push_back(window);
