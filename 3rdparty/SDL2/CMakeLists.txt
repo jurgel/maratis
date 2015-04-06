@@ -1080,7 +1080,6 @@ elseif(HAIKU)
 elseif(ANDROID)
   file(GLOB ANDROID_LIB
 	${SDL2_SOURCE_DIR}/src/core/android/*.c
-	${SDL2_SOURCE_DIR}/src/main/android/*.c
 	${SDL2_SOURCE_DIR}/src/loadso/dlopen/*.c
   )
   set(SOURCE_FILES ${SOURCE_FILES} ${ANDROID_LIB})

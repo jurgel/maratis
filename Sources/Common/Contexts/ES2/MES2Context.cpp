@@ -550,6 +550,16 @@ void MES2Context::createFX(unsigned int * fxId, unsigned int vertexShaderId, uns
     glAttachShader(*fxId, vertexShaderId);
     glAttachShader(*fxId, pixelShaderId);
     glLinkProgram(*fxId);
+
+    GLint linked;
+    glGetProgramiv(*fxId, GL_LINK_STATUS, &linked);
+    if(!linked)
+    {
+        printf("ERROR OpenGL : unable to link shader\n");
+        char shader_link_error[4096];
+        glGetShaderInfoLog(*fxId, sizeof(shader_link_error), NULL, shader_link_error);
+        printf("%s", shader_link_error);
+    }
 }
 
 void MES2Context::updateFX(unsigned int fxId)

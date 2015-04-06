@@ -119,8 +119,9 @@
 #define SDL_LOADSO_DLOPEN   1
 
 /* Enable various threading systems */
-#define SDL_THREAD_PTHREAD  1
-#define SDL_THREAD_PTHREAD_RECURSIVE_MUTEX  1
+#define SDL_THREADS_DISABLED 1
+//#define SDL_THREAD_PTHREAD  1
+//#define SDL_THREAD_PTHREAD_RECURSIVE_MUTEX  1
 
 /* Enable various timer systems */
 #define SDL_TIMER_UNIX  1

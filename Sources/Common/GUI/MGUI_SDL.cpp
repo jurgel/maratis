@@ -334,6 +334,7 @@ bool MGUI_init(void)
 
 MWindow * MGUI_createWindow(const char * title, int x, int y, unsigned int width, unsigned int height, MGUI_EVENT_CALLBACK)
 {
+#ifndef ANDROID
     SDL_Window * sdlWindow = SDL_CreateWindow(title, x, y, width, height, SDL_WINDOW_OPENGL);
     if (sdlWindow == NULL)
     {
@@ -349,7 +350,6 @@ MWindow * MGUI_createWindow(const char * title, int x, int y, unsigned int width
         return NULL;
     }
 
-#ifndef ANDROID
     // glew init
     glewExperimental = GL_TRUE;
     GLenum err = glewInit();
@@ -360,6 +360,48 @@ MWindow * MGUI_createWindow(const char * title, int x, int y, unsigned int width
       SDL_Quit();
       return NULL;
     }
+#else
+    SDL_DisplayMode current;
+    SDL_GetCurrentDisplayMode(0, &current);
+
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 0);
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+    SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 0);
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+    current.format = SDL_PIXELFORMAT_RGB565;
+
+    x = SDL_WINDOWPOS_UNDEFINED;
+    y = SDL_WINDOWPOS_UNDEFINED;
+    width = current.w;
+    height = current.h;
+    Uint32 flags = SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN | SDL_WINDOW_OPENGL;
+
+    SDL_Window * sdlWindow = SDL_CreateWindow(title, x, y, width, height, flags);
+    if (sdlWindow == NULL)
+    {
+        SDL_Quit();
+        return NULL;
+    }
+
+    SDL_SetWindowDisplayMode(sdlWindow, &current);
+    SDL_ShowWindow(sdlWindow);
+
+    SDL_GLContext sdlContext = SDL_GL_CreateContext(sdlWindow);
+    if (sdlContext == NULL)
+    {
+        SDL_DestroyWindow(sdlWindow);
+        SDL_Quit();
+        return NULL;
+    }
+
+    SDL_GL_MakeCurrent(sdlWindow, sdlContext);
 #endif
 
     MSDLWindow * window = new MSDLWindow(sdlWindow, sdlContext, x, y, width, height, eventCallback);
