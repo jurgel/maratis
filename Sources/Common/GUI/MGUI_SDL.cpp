@@ -34,6 +34,7 @@
 #ifdef __APPLE__
     #include <OpenGL/OpenGL.h>
     #include <OpenGL/gl.h>
+#else
 #ifdef WIN32
     #define GLEW_STATIC
 #endif
