@@ -32,15 +32,10 @@
 #include <MCore.h>
 #include <iostream>
 
-#ifdef __APPLE__
-    #include <OpenGL/OpenGL.h>
-    #include <OpenGL/gl.h>
-#else
 #ifdef WIN32
     #define GLEW_STATIC
 #endif
-    #include <GL/glew.h>
-#endif
+#include <GL/glew.h>
 
 #include "MGLContext.h"
 
