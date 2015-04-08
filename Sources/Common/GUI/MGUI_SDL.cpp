@@ -209,16 +209,22 @@ static void scroll_callback(MSDLWindow * rootWindow, double xoffset, double yoff
 
 static void close_callback(MSDLWindow * rootWindow)
 {
+    MLOG(6, "SDL Window Event Close");
+
     rootWindow->onClose();
 }
 
 static void size_callback(MSDLWindow * rootWindow, int width, int height)
 {
+    MLOG(6, "SDL Window Event Resize");
+
     rootWindow->onResize(width, height);
 }
 
 static void event_callback(MSDLWindow * rootWindow, SDL_Event event)
 {
+    MLOG(6, "SDL Event : " << event.type);
+
     unsigned int type = event.type;
     switch (type)
     {
@@ -238,6 +244,8 @@ static void event_callback(MSDLWindow * rootWindow, SDL_Event event)
         break;
     case SDL_WINDOWEVENT:
     {
+        MLOG(6, "SDL Window Event : " << (event.window.event + 0));
+
         switch(event.window.event)
         {
         case SDL_WINDOWEVENT_CLOSE:
@@ -245,6 +253,9 @@ static void event_callback(MSDLWindow * rootWindow, SDL_Event event)
             break;
         case SDL_WINDOWEVENT_RESIZED:
             size_callback(rootWindow, event.window.data1, event.window.data2);
+            break;
+        case SDL_WINDOWEVENT_SIZE_CHANGED:
+            SDL_GL_MakeCurrent(rootWindow->sdlWindow, rootWindow->sdlContext);
             break;
         case SDL_WINDOWEVENT_SHOWN:
             rootWindow->focus = true;
@@ -255,14 +266,12 @@ static void event_callback(MSDLWindow * rootWindow, SDL_Event event)
         default:
             break;
         }
-    }
         break;
+    }
     default:
         break;
     }
 }
-
-
 
 // thread main
 static void drawWindow(MSDLWindow * window)
@@ -319,6 +328,27 @@ static int thread_main(void * data)
 
     return 0;
 }*/
+
+static int app_event_callback(void * userData, SDL_Event * event)
+{
+    MLOG(6, "SDL App Event : " << event->type);
+
+    MSDLWindow * window = windows[0];
+    unsigned int type = event->type;
+    switch (type)
+    {
+    case SDL_APP_DIDENTERFOREGROUND:
+        //android and ios app enter foreground
+        MGUI_unpauseWindow(window);
+        return 0;
+    case SDL_APP_DIDENTERBACKGROUND:
+        //android and ios app enter background
+        MGUI_pauseWindow(window);
+        return 0;
+    default:
+        return 1;
+    }
+}
 
 bool MGUI_init(void)
 {
@@ -397,11 +427,15 @@ MWindow * MGUI_createWindow(const char * title, int x, int y, unsigned int width
         return NULL;
     }
 
-    SDL_GL_MakeCurrent(sdlWindow, sdlContext);
+    SDL_SetEventFilter(app_event_callback, NULL);
 #endif
 
     MSDLWindow * window = new MSDLWindow(sdlWindow, sdlContext, x, y, width, height, eventCallback);
     windows.push_back(window);
+
+#ifdef ANDROID
+    window->focus = true;
+#endif
 
     window->onCreate();
 
@@ -515,7 +549,7 @@ bool MGUI_update(void)
         return false;
 
     SDL_Event e;
-    if (SDL_PollEvent(&e))
+    while (SDL_PollEvent(&e))
     {
         for(i=0; i<wSize; i++)
         {

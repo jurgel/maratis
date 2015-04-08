@@ -66,6 +66,8 @@ static MRenderer *renderer = NULL;
 // window events
 void winEvents(MWindow *rootWindow, MWIN_EVENT_TYPE event)
 {
+    MLOG(6, "Window Event : " << event);
+
     MEngine *engine = MEngine::getInstance();
 
     switch (event)
@@ -101,8 +103,6 @@ void winEvents(MWindow *rootWindow, MWIN_EVENT_TYPE event)
         engine->setGame(game);
 
         game->begin();
-
-        MLOG(6, "Maratis Created: " << event);
     }
     break;
 
@@ -126,7 +126,6 @@ void winEvents(MWindow *rootWindow, MWIN_EVENT_TYPE event)
     break;
 
     default:
-        MLOG(6, "Maratis Event Other");
         break;
     }
 }
